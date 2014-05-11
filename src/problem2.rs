@@ -4,7 +4,7 @@ struct Fib {
 }
 
 impl Fib {
-    fn new () -> Fib {
+    fn new() -> Fib {
         Fib {prev: 1, current: 1}
     }
 }
