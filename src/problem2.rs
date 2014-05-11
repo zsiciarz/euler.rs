@@ -1,6 +1,6 @@
 struct Fib {
     prev: int,
-    current: int
+    current: int,
 }
 
 impl Fib {
