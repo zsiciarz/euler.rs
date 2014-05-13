@@ -1,3 +1,4 @@
+/// An infinite generator of Fibonacci sequence.
 struct Fib {
     prev: int,
     current: int,
@@ -10,6 +11,7 @@ impl Fib {
 }
 
 impl Iterator<int> for Fib {
+    /// Returns next value from the Fibonacci sequence.
     fn next(&mut self) -> Option<int> {
         let prev = self.prev;
         self.prev = self.current;
