@@ -4,7 +4,7 @@ fn digits(n: int) -> Vec<int> {
     let mut q = n;
     while q > 0 {
         let r = q % 10;
-        q = q / 10;
+        q /= 10;
         digits.push(r);
     }
     digits
