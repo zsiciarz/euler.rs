@@ -1,3 +1,4 @@
+/// Converts an integer to a vector of digits (in reverse order).
 fn digits (n: int) -> Vec<int> {
     let mut digits = Vec::new();
     let mut q = n;
