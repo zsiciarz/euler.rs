@@ -1,10 +1,13 @@
+use std::num;
+
 /// Converts an integer to a vector of digits (in reverse order).
-fn digits(n: int) -> Vec<int> {
+fn digits<T: Int + num::FromPrimitive>(n: T) -> Vec<T> {
     let mut digits = Vec::new();
     let mut q = n;
-    while q > 0 {
-        let r = q % 10;
-        q /= 10;
+    let base: T = num::from_int(10).unwrap();
+    while q > num::zero() {
+        let r = q % base;
+        q = q / base;
         digits.push(r);
     }
     digits
