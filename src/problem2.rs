@@ -20,5 +20,5 @@ impl Iterator<int> for Fib {
 
 pub fn solution() -> int {
     use std::iter::AdditiveIterator;
-    Fib::new().take_while(|i: &int| *i <= 4000000).filter(|i| i % 2 == 0).sum()
+    Fib::new().take_while(|&i| i <= 4000000).filter(|&i| i % 2 == 0).sum()
 }
