@@ -1,5 +1,5 @@
 /// Converts an integer to a vector of digits (in reverse order).
-fn digits (n: int) -> Vec<int> {
+fn digits(n: int) -> Vec<int> {
     let mut digits = Vec::new();
     let mut q = n;
     while q > 0 {
@@ -17,7 +17,7 @@ fn isPalindromic(n: int) -> bool {
     digits == reversed
 }
 
-pub fn solution () -> int {
+pub fn solution() -> int {
     let mut result = 0;
     for x in range(100, 999) {
         for y in range(100, 999) {
