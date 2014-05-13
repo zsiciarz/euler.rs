@@ -10,7 +10,7 @@ fn digits(n: int) -> Vec<int> {
     digits
 }
 
-fn isPalindromic(n: int) -> bool {
+fn is_palindromic(n: int) -> bool {
     let digits = digits(n);
     let mut reversed = digits.clone();
     reversed.reverse();
@@ -22,7 +22,7 @@ pub fn solution() -> int {
     for x in range(100, 999) {
         for y in range(100, 999) {
             let product = x * y;
-            if isPalindromic(product) && product > result {
+            if is_palindromic(product) && product > result {
                 result = product;
             }
         }
