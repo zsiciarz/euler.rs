@@ -1,5 +1,5 @@
-mod problem6;
+mod problem3;
 
 fn main() {
-    println!("{}", ::problem6::solution());
+    println!("{}", ::problem3::solution());
 }
