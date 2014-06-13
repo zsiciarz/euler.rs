@@ -1,7 +1,5 @@
-fn is_pythagorean(a: int, b: int, c: int) -> bool {
-    (a * a + b * b == c * c) ||
-    (b * b + c * c == a * a) ||
-    (a * a + c * c == b * b)
+fn is_pythagorean(a2: int, b2: int, c2: int) -> bool {
+    (a2 + b2 == c2) || (b2 + c2 == a2) || (a2 + c2 == b2)
 }
 
 pub fn solution() -> int {
@@ -11,7 +9,7 @@ pub fn solution() -> int {
                 continue;
             }
             let c = 1000 - (a + b);
-            if is_pythagorean(a, b, c) {
+            if is_pythagorean(a * a, b * b, c * c) {
                 return a * b * c;
             }
         }
