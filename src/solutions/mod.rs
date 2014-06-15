@@ -1,5 +1,8 @@
 mod problem14;
 
 pub fn solution(problem: int) -> int {
-    problem14::solution()
+    match problem {
+        14 => problem14::solution(),
+        _  => -1,
+    }
 }
