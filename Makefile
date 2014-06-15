@@ -1,6 +1,6 @@
 # Rust-Empty: An Makefile to get started with Rust
 # https://github.com/bvssvni/rust-empty
-# 
+#
 # The MIT License (MIT)
 #
 # Copyright (c) 2014 Sven Nilsen
@@ -236,7 +236,7 @@ doc: $(SOURCE_FILES) | src/
 
 run: exe
 	$(Q)cd bin/ \
-	&& ./main
+	&& ./main $(problem)
 
 target-dir: $(TARGET_LIB_DIR)
 
