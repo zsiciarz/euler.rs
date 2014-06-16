@@ -1,6 +1,8 @@
 euler.rs
 ========
 
+[![Build Status](https://travis-ci.org/zsiciarz/euler.rs.svg?branch=master)](https://travis-ci.org/zsiciarz/euler.rs)
+
 My solutions for Project Euler in [Rust](http://www.rust-lang.org/).
 
 Installation
