@@ -8,7 +8,7 @@ mod problem9;
 mod problem14;
 
 pub fn solution(problem: int) -> int {
-    println!("Running solution for problem \\#{}", problem);
+    println!("Running solution for problem #{}", problem);
     match problem {
         1 => problem1::solution(),
         2 => problem2::solution(),
