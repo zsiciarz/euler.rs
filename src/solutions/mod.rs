@@ -6,6 +6,7 @@ mod problem5;
 mod problem6;
 mod problem9;
 mod problem14;
+mod problem17;
 
 pub fn solution(problem: int) -> int {
     println!("Running solution for problem #{}", problem);
@@ -18,6 +19,7 @@ pub fn solution(problem: int) -> int {
         6 => problem6::solution(),
         9 => problem9::solution(),
         14 => problem14::solution(),
+        17 => problem17::solution(),
         _  => -1,
     }
 }
