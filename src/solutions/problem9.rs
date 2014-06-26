@@ -3,7 +3,7 @@ fn is_pythagorean(a2: int, b2: int, c2: int) -> bool {
 }
 
 pub fn solution() -> int {
-    for a in range(1, 500) {
+    for a in range(1i, 500) {
         for b in range(a, a + 1000) {
             if b > 500 {
                 continue;

@@ -22,8 +22,8 @@ fn is_palindromic(n: int) -> bool {
 
 pub fn solution() -> int {
     let mut result = 0;
-    for x in range(100, 999) {
-        for y in range(100, 999) {
+    for x in range(100i, 999) {
+        for y in range(100i, 999) {
             let product = x * y;
             if is_palindromic(product) && product > result {
                 result = product;

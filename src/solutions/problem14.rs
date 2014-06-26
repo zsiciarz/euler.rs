@@ -14,7 +14,7 @@ fn collatz_length(n: int) -> int {
 pub fn solution() -> int {
     let mut max_length = 0;
     let mut max_index = 0;
-    for i in range(1, 1000000) {
+    for i in range(1i, 1000000) {
         let length = collatz_length(i);
         if length > max_length {
             max_index = i;
