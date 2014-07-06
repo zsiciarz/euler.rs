@@ -1,0 +1,11 @@
+[package]
+
+name = "euler.rs"
+version = "0.0.0"
+readme = "README.md"
+authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
+
+[[bin]]
+
+name = "euler"
+path = "src/main.rs"
