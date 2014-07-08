@@ -23,7 +23,7 @@ pub fn prime_factor_groups(n: int) -> HashMap<int, int> {
     let mut powers = HashMap::new();
     let factors = prime_factors(n);
     for factor in factors.move_iter() {
-        powers.insert_or_update_with(factor, 1i, |_: &int, v: &mut int| *v += 1);
+        powers.insert_or_update_with(factor, 1i, |_, v| *v += 1);
     }
     powers
 }
