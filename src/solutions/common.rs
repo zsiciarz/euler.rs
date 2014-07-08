@@ -21,8 +21,7 @@ pub fn prime_factors(n: int) -> Vec<int> {
 
 pub fn prime_factor_groups(n: int) -> HashMap<int, int> {
     let mut powers = HashMap::new();
-    let factors = prime_factors(n);
-    for factor in factors.move_iter() {
+    for factor in prime_factors(n).move_iter() {
         powers.insert_or_update_with(factor, 1i, |_, v| *v += 1);
     }
     powers
