@@ -1,17 +1,4 @@
-use std::num;
-
-/// Converts an integer to a vector of digits (in reverse order).
-fn digits<T: Int + num::FromPrimitive>(n: T) -> Vec<T> {
-    let mut digits = Vec::new();
-    let mut q = n;
-    let base: T = num::from_int(10).unwrap();
-    while q > num::zero() {
-        let r = q % base;
-        q = q / base;
-        digits.push(r);
-    }
-    digits
-}
+use super::common::digits;
 
 fn is_palindromic(n: int) -> bool {
     let digits = digits(n);
