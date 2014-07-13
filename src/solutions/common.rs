@@ -1,8 +1,9 @@
 use std::collections::HashMap;
 use std::num;
+use num::integer::Integer;
 
 /// Converts an integer to a vector of digits (in reverse order).
-pub fn digits<T: Int + num::FromPrimitive>(n: T) -> Vec<T> {
+pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
     let mut digits = Vec::new();
     let mut q = n;
     let base: T = num::from_int(10).unwrap();
