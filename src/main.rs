@@ -1,3 +1,5 @@
+extern crate num;
+
 mod solutions;
 
 fn main() {
