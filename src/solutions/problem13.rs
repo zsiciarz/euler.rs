@@ -108,8 +108,8 @@ pub fn solution() -> int {
         "53503534226472524250874054075591789781264330331690",
     ).move_iter().map(|n| from_str::<BigInt>(n).unwrap()).sum();
     let first_digits = digits(sum).move_iter().rev().take(10);
-    let pairs = first_digits.zip(range(1i, 10).rev());
-    match pairs.map(|(a, b)| a * num::from_int(num::pow(10i, b as uint)).unwrap()).sum().to_int() {
+    let pairs = first_digits.zip(range(1u, 10).rev());
+    match pairs.map(|(a, b)| a * num::from_int(num::pow(10i, b)).unwrap()).sum().to_int() {
         Some(x) => x,
         None => -1,
     }
