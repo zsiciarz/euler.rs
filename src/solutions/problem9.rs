@@ -1,4 +1,4 @@
-use super::SolutionResult;
+use super::{SolutionResult,SolutionNotFound};
 
 fn is_pythagorean(a2: int, b2: int, c2: int) -> bool {
     (a2 + b2 == c2) || (b2 + c2 == a2) || (a2 + c2 == b2)
@@ -16,5 +16,5 @@ pub fn solution() -> SolutionResult {
             }
         }
     }
-    Ok(0)
+    Err(SolutionNotFound)
 }

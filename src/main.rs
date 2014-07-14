@@ -1,6 +1,6 @@
 extern crate num;
 
-use solutions::{NotImplemented,MatchFailed};
+use solutions::{NotImplemented,SolutionNotFound,MatchFailed};
 
 mod solutions;
 
@@ -13,6 +13,7 @@ fn main() {
                 Ok(x) => println!("{}", x),
                 Err(e) => match e {
                     NotImplemented => println!("Not implemented yet"),
+                    SolutionNotFound => println!("Solution not found"),
                     MatchFailed => println!("Pattern matching failed"),
                 }
             },
