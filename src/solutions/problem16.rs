@@ -1,13 +1,13 @@
-use super::{SolutionResult,MatchFailed};
-use std::num::{from_int,pow};
+use std::num;
 use num::BigInt;
 
+use super::{SolutionResult,MatchFailed};
 use super::common::digits;
 
 pub fn solution() -> SolutionResult {
     use std::iter::AdditiveIterator;
-    let base: BigInt = from_int(2).unwrap();
-    match digits(pow(base, 1000)).move_iter().sum().to_int() {
+    let base: BigInt = num::from_int(2).unwrap();
+    match digits(num::pow(base, 1000)).move_iter().sum().to_int() {
         Some(x) => Ok(x),
         None => Err(MatchFailed),
     }

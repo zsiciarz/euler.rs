@@ -1,7 +1,7 @@
-use super::{SolutionResult,MatchFailed};
+use std::num;
 use num::BigInt;
-use std::num::{from_int,pow};
 
+use super::{SolutionResult,MatchFailed};
 use super::common::digits;
 
 pub fn solution() -> SolutionResult {
@@ -110,7 +110,7 @@ pub fn solution() -> SolutionResult {
     ).move_iter().map(|n| from_str::<BigInt>(n).unwrap()).sum();
     let first_digits = digits(sum).move_iter().rev().take(10);
     let pairs = first_digits.zip(range(1u, 10).rev());
-    match pairs.map(|(a, b)| a * from_int(pow(10i, b)).unwrap()).sum().to_int() {
+    match pairs.map(|(a, b)| a * num::from_int(num::pow(10i, b)).unwrap()).sum().to_int() {
         Some(x) => Ok(x),
         None => Err(MatchFailed),
     }
