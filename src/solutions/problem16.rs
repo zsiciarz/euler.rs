@@ -1,4 +1,4 @@
-use super::SolutionResult;
+use super::{SolutionResult,MatchFailed};
 use std::num::{from_int,pow};
 use num::BigInt;
 
@@ -9,6 +9,6 @@ pub fn solution() -> SolutionResult {
     let base: BigInt = from_int(2).unwrap();
     match digits(pow(base, 1000)).move_iter().sum().to_int() {
         Some(x) => Ok(x),
-        None => Ok(-1),
+        None => Err(MatchFailed),
     }
 }

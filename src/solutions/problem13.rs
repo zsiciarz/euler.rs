@@ -1,4 +1,4 @@
-use super::SolutionResult;
+use super::{SolutionResult,MatchFailed};
 use num::BigInt;
 use std::num::{from_int,pow};
 
@@ -112,6 +112,6 @@ pub fn solution() -> SolutionResult {
     let pairs = first_digits.zip(range(1u, 10).rev());
     match pairs.map(|(a, b)| a * from_int(pow(10i, b)).unwrap()).sum().to_int() {
         Some(x) => Ok(x),
-        None => Ok(-1),
+        None => Err(MatchFailed),
     }
 }

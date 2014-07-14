@@ -15,6 +15,7 @@ mod problem17;
 
 pub enum SolutionError {
     NotImplemented,
+    MatchFailed,
 }
 
 type SolutionResult = Result<int, SolutionError>;
