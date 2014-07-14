@@ -1,3 +1,4 @@
+use super::SolutionResult;
 use std::num::div_rem;
 
 pub fn count_letters(n: uint) -> uint {
@@ -19,7 +20,7 @@ pub fn count_letters(n: uint) -> uint {
     }
 }
 
-pub fn solution() -> int {
+pub fn solution() -> SolutionResult {
     let answer = "onethousand".len() + range(1u, 1000u).fold(0, |acc, x| acc + count_letters(x));
-    answer as int
+    Ok(answer as int)
 }

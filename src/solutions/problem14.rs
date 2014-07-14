@@ -1,3 +1,5 @@
+use super::SolutionResult;
+
 fn collatz_length(n: int) -> int {
     let mut x = n;
     let mut i = 1;
@@ -11,7 +13,7 @@ fn collatz_length(n: int) -> int {
     i
 }
 
-pub fn solution() -> int {
+pub fn solution() -> SolutionResult {
     let mut max_length = 0;
     let mut max_index = 0;
     for i in range(1i, 1000000) {
@@ -21,5 +23,5 @@ pub fn solution() -> int {
             max_length = length;
         }
     }
-    max_index
+    Ok(max_index)
 }

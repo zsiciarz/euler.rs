@@ -1,9 +1,10 @@
+use super::SolutionResult;
 use num::BigInt;
 use std::num::{from_int,pow};
 
 use super::common::digits;
 
-pub fn solution() -> int {
+pub fn solution() -> SolutionResult {
     use std::iter::AdditiveIterator;
     let sum = vec!(
         "37107287533902102798797998220837590246510135740250",
@@ -110,7 +111,7 @@ pub fn solution() -> int {
     let first_digits = digits(sum).move_iter().rev().take(10);
     let pairs = first_digits.zip(range(1u, 10).rev());
     match pairs.map(|(a, b)| a * from_int(pow(10i, b)).unwrap()).sum().to_int() {
-        Some(x) => x,
-        None => -1,
+        Some(x) => Ok(x),
+        None => Ok(-1),
     }
 }

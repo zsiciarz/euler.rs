@@ -1,3 +1,4 @@
+use super::SolutionResult;
 use super::common::digits;
 
 fn is_palindromic(n: int) -> bool {
@@ -7,7 +8,7 @@ fn is_palindromic(n: int) -> bool {
     digits == reversed
 }
 
-pub fn solution() -> int {
+pub fn solution() -> SolutionResult {
     let mut result = 0;
     for x in range(100i, 999) {
         for y in range(100i, 999) {
@@ -17,5 +18,5 @@ pub fn solution() -> int {
             }
         }
     }
-    result
+    Ok(result)
 }

@@ -13,7 +13,13 @@ mod problem14;
 mod problem16;
 mod problem17;
 
-pub fn solution(problem: int) -> int {
+pub enum SolutionError {
+    NotImplemented,
+}
+
+type SolutionResult = Result<int, SolutionError>;
+
+pub fn solution(problem: int) -> SolutionResult {
     println!("Running solution for problem #{}", problem);
     match problem {
         1 => problem1::solution(),
@@ -29,6 +35,6 @@ pub fn solution(problem: int) -> int {
         14 => problem14::solution(),
         16 => problem16::solution(),
         17 => problem17::solution(),
-        _  => -1,
+        _  => Err(NotImplemented),
     }
 }
