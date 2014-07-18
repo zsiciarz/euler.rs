@@ -22,6 +22,6 @@ pub fn solution() -> SolutionResult {
     let num_sundays = days.scan(0, |acc: &mut int, x: int| {
         *acc = *acc + x;
         Some(*acc)
-    }).filter(|&x| x % 7 == 0).count();
+    }).filter(|&x| x % 7 == 0).count() + 1;
     Ok(num_sundays as int)
 }
