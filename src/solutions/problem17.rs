@@ -14,10 +14,10 @@ pub fn count_letters(n: uint) -> uint {
     let (d10, m10) = num::div_rem(n, 10);
     let (d100, m100) = num::div_rem(n, 100);
     match n {
-        _ if n < 20 => *low_digits.get(n),
-        _ if n < 100 => *tens.get(d10 - 2) + count_letters(m10),
-        _ if m100 == 0 => *low_digits.get(d100) + "hundred".len(),
-        _ => *low_digits.get(d100) + "hundredand".len() + count_letters(m100),
+        _ if n < 20 => low_digits[n],
+        _ if n < 100 => tens[d10 - 2] + count_letters(m10),
+        _ if m100 == 0 => low_digits[d100] + "hundred".len(),
+        _ => low_digits[d100] + "hundredand".len() + count_letters(m100),
     }
 }
 
