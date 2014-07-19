@@ -1,6 +1,6 @@
 extern crate num;
 
-use solutions::{NotImplemented,SolutionNotFound,MatchFailed};
+use solutions::{NotImplemented, SolutionNotFound, MatchFailed};
 
 mod solutions;
 

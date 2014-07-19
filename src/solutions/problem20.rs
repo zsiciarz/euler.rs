@@ -2,7 +2,7 @@ use std::iter::{AdditiveIterator, MultiplicativeIterator};
 use std::num;
 use num::BigInt;
 
-use super::{SolutionResult,MatchFailed};
+use super::{SolutionResult, MatchFailed};
 use super::common::digits;
 
 pub fn solution() -> SolutionResult {

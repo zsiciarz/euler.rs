@@ -1,4 +1,4 @@
-use super::{SolutionResult,MatchFailed};
+use super::{SolutionResult, MatchFailed};
 use super::common::prime_factors;
 
 pub fn solution() -> SolutionResult {
