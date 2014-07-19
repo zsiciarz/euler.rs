@@ -1,3 +1,5 @@
+use std::iter::AdditiveIterator;
+
 use super::SolutionResult;
 
 /// An infinite generator of Fibonacci sequence.
@@ -23,6 +25,5 @@ impl Iterator<int> for Fib {
 }
 
 pub fn solution() -> SolutionResult {
-    use std::iter::AdditiveIterator;
     Ok(Fib::new().take_while(|&i| i <= 4000000).filter(|&i| i % 2 == 0).sum())
 }

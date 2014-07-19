@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::iter::MultiplicativeIterator;
 use std::num;
 use num::integer::Integer;
 
@@ -43,6 +44,5 @@ pub fn prime_factor_groups(n: int) -> HashMap<int, int> {
 }
 
 pub fn num_divisors(n: int) -> int {
-    use std::iter::MultiplicativeIterator;
     prime_factor_groups(n).values().map(|&x| x + 1).product()
 }

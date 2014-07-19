@@ -1,3 +1,4 @@
+use std::iter::AdditiveIterator;
 use std::num;
 use num::BigInt;
 
@@ -5,7 +6,6 @@ use super::{SolutionResult,MatchFailed};
 use super::common::digits;
 
 pub fn solution() -> SolutionResult {
-    use std::iter::AdditiveIterator;
     let sum = vec!(
         "37107287533902102798797998220837590246510135740250",
         "46376937677490009712648124896970078050417018260538",
