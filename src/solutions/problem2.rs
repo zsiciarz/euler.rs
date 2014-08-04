@@ -1,4 +1,5 @@
 use std::iter::AdditiveIterator;
+use std::num;
 
 use super::SolutionResult;
 
@@ -10,7 +11,7 @@ struct Fib {
 
 impl Fib {
     fn new() -> Fib {
-        Fib {prev: 1, current: 1}
+        Fib {prev: num::one(), current: num::one()}
     }
 }
 
