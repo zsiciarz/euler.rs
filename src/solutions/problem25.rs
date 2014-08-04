@@ -1,4 +1,3 @@
-use std::num;
 use num::BigInt;
 
 use super::{SolutionResult};
