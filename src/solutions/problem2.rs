@@ -1,4 +1,5 @@
 use std::iter::AdditiveIterator;
+use std::mem;
 use std::num;
 
 use super::SolutionResult;
@@ -18,10 +19,9 @@ impl Fib {
 impl Iterator<int> for Fib {
     /// Returns next value from the Fibonacci sequence.
     fn next(&mut self) -> Option<int> {
-        let prev = self.prev;
-        self.prev = self.current;
-        self.current = prev + self.current;
-        Some(self.prev)
+        let current = self.prev + self.current;
+        let prev = mem::replace(&mut self.prev, current);
+        Some(mem::replace(&mut self.current, prev))
     }
 }
 
