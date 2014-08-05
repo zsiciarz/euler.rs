@@ -5,8 +5,8 @@ fn sum_diagonals(level: int) -> (int, int) {
         return (1, 1);
     }
     let step = 2 * (level - 1);
-    let (prevSum, prevValue) = sum_diagonals(level - 1);
-    (prevSum + 4 * prevValue + 10 * step, prevValue + 4 * step)
+    let (prev_sum, prev_value) = sum_diagonals(level - 1);
+    (prev_sum + 4 * prev_value + 10 * step, prev_value + 4 * step)
 }
 
 pub fn solution() -> SolutionResult {
