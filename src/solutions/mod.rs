@@ -15,6 +15,7 @@ mod problem17;
 mod problem19;
 mod problem20;
 mod problem25;
+mod problem28;
 
 pub enum SolutionError {
     NotImplemented,
@@ -43,6 +44,7 @@ pub fn solution(problem: int) -> SolutionResult {
         19 => problem19::solution(),
         20 => problem20::solution(),
         25 => problem25::solution(),
+        28 => problem28::solution(),
         _  => Err(NotImplemented),
     }
 }
