@@ -10,6 +10,6 @@ fn sum_diagonals(level: int) -> (int, int) {
 }
 
 pub fn solution() -> SolutionResult {
-    let (sum, value) = sum_diagonals(501);
+    let (sum, _) = sum_diagonals(501);
     Ok(sum)
 }
