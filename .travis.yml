@@ -3,4 +3,4 @@ install:
     - yes | make nightly-install
 script:
     - rustc --version
-    - make exe
+    - cargo build --verbose
