@@ -1,8 +1,7 @@
 [package]
 
-name = "euler.rs"
+name = "euler"
 version = "0.0.0"
-readme = "README.md"
 authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [[bin]]
