@@ -11,4 +11,4 @@ Installation
     git clone https://github.com/zsiciarz/euler.rs.git
     cd euler.rs
     make nightly-install
-    make run problem=<PROBLEM NUMBER>
+    cargo run -- <PROBLEM NUMBER>
