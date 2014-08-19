@@ -8,3 +8,7 @@ authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 name = "euler"
 path = "src/main.rs"
+
+[dependencies.slow_primes]
+
+git = "https://github.com/huonw/slow_primes.git"
