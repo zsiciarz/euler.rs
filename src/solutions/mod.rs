@@ -8,6 +8,7 @@ mod problem6;
 mod problem7;
 mod problem8;
 mod problem9;
+mod problem10;
 mod problem12;
 mod problem13;
 mod problem14;
@@ -39,6 +40,7 @@ pub fn solution(problem: int) -> SolutionResult {
         7 => problem7::solution(),
         8 => problem8::solution(),
         9 => problem9::solution(),
+        10 => problem10::solution(),
         12 => problem12::solution(),
         13 => problem13::solution(),
         14 => problem14::solution(),
