@@ -1,9 +1,9 @@
 use super::{SolutionResult, MatchFailed};
-use super::common::prime_factors;
+use slow_primes::Primes;
 
 pub fn solution() -> SolutionResult {
-    match prime_factors(600851475143).last() {
+    match Primes::sieve(10000).factor(600851475143).iter().last() {
         None => Err(MatchFailed),
-        Some(&x) => Ok(x)
+        Some(&(p, _)) => Ok(p as int)
     }
 }

@@ -1,4 +1,5 @@
 extern crate num;
+extern crate slow_primes;
 
 use solutions::{NotImplemented, SolutionNotFound, MatchFailed};
 
