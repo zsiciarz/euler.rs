@@ -3,6 +3,7 @@ use std::iter::MultiplicativeIterator;
 use std::mem;
 use std::num;
 use num::integer::Integer;
+use slow_primes::Primes;
 
 /// Converts an integer to a vector of digits (in reverse order).
 pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
@@ -44,8 +45,9 @@ pub fn prime_factor_groups(n: int) -> HashMap<int, int> {
     powers
 }
 
-pub fn num_divisors(n: int) -> int {
-    prime_factor_groups(n).values().map(|&x| x + 1).product()
+pub fn num_divisors(n: int, primes: &Primes) -> int {
+    let factors = primes.factor(n as uint);
+    factors.iter().map(|&(_, x)| x + 1).product() as int
 }
 
 /// An infinite generator of Fibonacci sequence.
