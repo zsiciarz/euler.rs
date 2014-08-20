@@ -1,6 +1,7 @@
 use std::io::File;
 use std::iter::AdditiveIterator;
 use std::path::Path;
+
 use super::SolutionResult;
 
 fn name_value(name: &str) -> uint {
