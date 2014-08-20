@@ -1,7 +1,7 @@
 use std::io::File;
 use std::iter::AdditiveIterator;
 use std::path::Path;
-use super::{SolutionResult};
+use super::SolutionResult;
 
 fn name_value(name: &str) -> uint {
     name.chars().filter_map(|c| if c != '\"' {
