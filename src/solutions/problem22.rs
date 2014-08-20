@@ -4,10 +4,10 @@ use std::path::Path;
 use super::{SolutionResult};
 
 fn name_value(name: &str) -> uint {
-    name.chars().filter_map(|c| if c == '\"' {
-        None
-    } else {
+    name.chars().filter_map(|c| if c != '\"' {
         Some((c.to_ascii().to_byte() - 64u8) as uint)
+    } else {
+        None
     }).sum()
 }
 
