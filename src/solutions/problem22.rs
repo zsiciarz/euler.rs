@@ -19,3 +19,11 @@ pub fn solution() -> SolutionResult {
     names.sort();
     Ok(names.move_iter().enumerate().map(|(i, name)| (i + 1) * name_value(name)).sum() as int)
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 100i), Ok(82));
+    }
+}

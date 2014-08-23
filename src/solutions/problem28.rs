@@ -13,3 +13,11 @@ pub fn solution() -> SolutionResult {
     let (sum, _) = sum_diagonals(501);
     Ok(sum)
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 100i), Ok(1));
+    }
+}
