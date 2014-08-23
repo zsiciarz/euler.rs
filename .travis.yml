@@ -1,6 +1,1 @@
-language: c
-install:
-    - yes | make nightly-install
-script:
-    - rustc --version
-    - cargo build --verbose
+language: rust
