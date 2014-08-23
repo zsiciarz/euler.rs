@@ -22,6 +22,7 @@ mod problem28;
 mod problem29;
 mod problem30;
 
+#[deriving(PartialEq,Show)]
 pub enum SolutionError {
     NotImplemented,
     SolutionNotFound,
