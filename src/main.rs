@@ -2,11 +2,15 @@ extern crate num;
 extern crate getopts;
 extern crate slow_primes;
 
+#[cfg(not(test))]
 use getopts::{optopt, getopts};
+
+#[cfg(not(test))]
 use solutions::{NotImplemented, SolutionNotFound, MatchFailed};
 
 mod solutions;
 
+#[cfg(not(test))]
 fn main() {
     let args = std::os::args();
     let program_name = args[0].clone();

@@ -31,6 +31,7 @@ pub enum SolutionError {
 
 type SolutionResult = Result<int, SolutionError>;
 
+#[cfg(not(test))]
 pub fn solution(problem: int) -> SolutionResult {
     println!("Running solution for problem #{}", problem);
     match problem {
