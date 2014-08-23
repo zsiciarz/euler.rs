@@ -7,3 +7,11 @@ pub fn solution() -> SolutionResult {
         Some(&(p, _)) => Ok(p as int)
     }
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 100i), Ok(57));
+    }
+}
