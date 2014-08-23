@@ -25,3 +25,11 @@ pub fn solution() -> SolutionResult {
     let answer = "onethousand".len() + range(1u, 1000u).fold(0, |acc, x| acc + count_letters(x));
     Ok(answer as int)
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 100i), Ok(24));
+    }
+}

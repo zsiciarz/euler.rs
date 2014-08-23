@@ -13,3 +13,11 @@ pub fn solution() -> SolutionResult {
         n += 1;
     }
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 10000i), Ok(6500));
+    }
+}

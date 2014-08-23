@@ -18,3 +18,11 @@ pub fn solution() -> SolutionResult {
     }
     Err(SolutionNotFound)
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 10000i), Ok(5000));
+    }
+}
