@@ -20,8 +20,8 @@ pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
 pub fn num_divisors(n: int, primes: &Primes) -> int {
     let factors = primes.factor(n as uint);
     match factors {
-        Some(factors) => factors.iter().map(|&(_, x)| x + 1).product() as int,
-        None => 0i
+        Ok(factors) => factors.iter().map(|&(_, x)| x + 1).product() as int,
+        Err(_) => 0i
     }
 }
 
