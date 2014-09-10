@@ -1,13 +1,18 @@
 use std::cmp;
+use std::io::File;
+use std::path::Path;
 
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
+    let path = Path::new("data/p018_triangle.txt");
+    let contents = File::open(&path).read_to_string().ok().expect("Cannot read file");
+    let mut lines = contents.as_slice().lines();
     let mut rows = Vec::new();
-    rows.push(vec![3i, 0, 0, 0]);
-    rows.push(vec![7i, 4, 0, 0]);
-    rows.push(vec![2i, 4, 6, 0]);
-    rows.push(vec![8i, 5, 9, 3]);
+    for line in lines {
+        let row = line.words().filter_map(from_str).collect::<Vec<int>>();
+        rows.push(row);
+    }
     for i in range(0u, rows.len() - 1).rev() {
         for j in range(0u, i + 1) {
             *rows.get_mut(i).get_mut(j) += cmp::max(rows[i + 1][j], rows[i + 1][j + 1]);
