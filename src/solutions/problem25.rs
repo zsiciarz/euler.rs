@@ -1,9 +1,12 @@
+use std::num;
 use num::BigInt;
 
 use super::{SolutionResult};
 use super::common::{digits, Fib};
 
 pub fn solution() -> SolutionResult {
+    let base: BigInt = num::from_int(10).unwrap();
+    let threshold: BigInt = num::pow(base, 999);
     let fib: Fib<BigInt> = Fib::new();
-    Ok(fib.map(|i| digits(i).len()).take_while(|&i| i < 1000).count() as int)
+    Ok(1 + fib.take_while(|i| *i < threshold).count() as int)
 }
