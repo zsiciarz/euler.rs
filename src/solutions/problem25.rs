@@ -2,7 +2,7 @@ use std::num;
 use num::BigInt;
 
 use super::{SolutionResult};
-use super::common::{digits, Fib};
+use super::common::Fib;
 
 pub fn solution() -> SolutionResult {
     let base: BigInt = num::from_int(10).unwrap();
