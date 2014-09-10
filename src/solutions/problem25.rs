@@ -1,7 +1,7 @@
 use std::num;
 use num::BigInt;
 
-use super::{SolutionResult};
+use super::SolutionResult;
 use super::common::Fib;
 
 pub fn solution() -> SolutionResult {
