@@ -1,3 +1,5 @@
+use std::iter::AdditiveIterator;
+
 use super::SolutionResult;
 
 /// Finds all proper divisors of an integer.
@@ -12,6 +14,10 @@ fn divisors(n: int) -> Vec<int> {
         }
     }
     divisors
+}
+
+fn sum_divisors(n: int) -> int {
+    divisors(n).move_iter().sum()
 }
 
 pub fn solution() -> SolutionResult {
