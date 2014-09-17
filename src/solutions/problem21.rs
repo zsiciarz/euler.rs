@@ -18,7 +18,7 @@ fn divisors(n: int) -> Vec<int> {
 }
 
 fn sum_divisors(n: int) -> int {
-    divisors(n).move_iter().sum()
+    divisors(n).into_iter().sum()
 }
 
 pub fn solution() -> SolutionResult {

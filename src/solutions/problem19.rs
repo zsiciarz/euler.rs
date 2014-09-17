@@ -18,7 +18,7 @@ fn year_days(year: int) -> Vec<int> {
 }
 
 pub fn solution() -> SolutionResult {
-    let days = range(1901i, 2001).flat_map(|year| year_days(year).move_iter());
+    let days = range(1901i, 2001).flat_map(|year| year_days(year).into_iter());
     let num_sundays = days.scan(0, |acc: &mut int, x: int| {
         *acc = *acc + x;
         Some(*acc)

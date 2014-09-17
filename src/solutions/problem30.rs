@@ -5,7 +5,7 @@ use super::{SolutionResult};
 use super::common::digits;
 
 fn sum_powers(pow: uint, x: int) -> int {
-    digits(x).move_iter().map(|i| num::pow(i, pow)).sum()
+    digits(x).into_iter().map(|i| num::pow(i, pow)).sum()
 }
 
 pub fn solution() -> SolutionResult {
