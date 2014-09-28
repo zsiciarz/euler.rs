@@ -12,3 +12,7 @@ path = "src/main.rs"
 [dependencies.slow_primes]
 
 git = "https://github.com/huonw/slow_primes.git"
+
+[dependencies.num]
+
+git = "https://github.com/rust-lang/num"
