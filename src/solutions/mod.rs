@@ -27,6 +27,7 @@ mod problem67;
 
 #[deriving(PartialEq,Show)]
 pub enum SolutionError {
+    #[cfg(not(test))]
     NotImplemented,
     SolutionNotFound,
     MatchFailed,
