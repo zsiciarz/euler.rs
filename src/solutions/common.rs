@@ -17,6 +17,20 @@ pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
     digits
 }
 
+/// Finds all proper divisors of an integer.
+pub fn divisors(n: int) -> Vec<int> {
+    let limit = (n as f32).sqrt().ceil() as int;
+    let mut divisors = Vec::new();
+    divisors.push(1);
+    for i in range(2i, limit) {
+        if n % i == 0 {
+            divisors.push(i);
+            divisors.push(n / i);
+        }
+    }
+    divisors
+}
+
 pub fn num_divisors(n: int, primes: &Primes) -> int {
     let factors = primes.factor(n as uint);
     match factors {
