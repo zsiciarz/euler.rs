@@ -1,3 +1,5 @@
+#![feature(slicing_syntax)]
+
 extern crate num;
 extern crate getopts;
 extern crate slow_primes;
@@ -28,7 +30,7 @@ fn main() {
             return;
         }
     };
-    match from_str::<int>(problem_number.as_slice()) {
+    match from_str::<int>(problem_number[]) {
         Some(problem_number) => match solutions::solution(problem_number) {
             Ok(x) => println!("{}", x),
             Err(e) => match e {
