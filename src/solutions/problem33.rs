@@ -3,7 +3,7 @@ use num::rational::Ratio;
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
-    let mut r = Ratio::new(1i, 1);
+    let mut r = Ratio::from_integer(1i);
     for x in range(1i, 10) {
         for y in range(1i, 10) {
             for z in range(1i, 10) {
