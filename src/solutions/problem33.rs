@@ -15,3 +15,11 @@ pub fn solution() -> SolutionResult {
     }
     Ok(*r.denom())
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 10i), Ok(0));
+    }
+}
