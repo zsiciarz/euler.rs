@@ -15,7 +15,7 @@ pub fn solution() -> SolutionResult {
     }
     for i in range(0u, rows.len() - 1).rev() {
         for j in range(0u, i + 1) {
-            *rows.get_mut(i).get_mut(j) += cmp::max(rows[i + 1][j], rows[i + 1][j + 1]);
+            (*rows[i])[j] += cmp::max(rows[i + 1][j], rows[i + 1][j + 1]);
         }
     }
     Ok(rows[0][0])
