@@ -1,10 +1,7 @@
-use std::iter;
-use std::iter::AdditiveIterator;
-use std::num;
-
 use slow_primes::Primes;
 
 use super::SolutionResult;
+use super::common::undigits;
 
 fn pandigitals(n: uint) -> Vec<uint> {
     let v = [1u, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -15,10 +12,6 @@ fn pandigitals(n: uint) -> Vec<uint> {
         result.push(undigits(p[]));
     }
     result
-}
-
-fn undigits(ds: &[uint]) -> uint {
-    ds.iter().zip(iter::count(0, 1)).map(|(&a, b)| a * num::pow(10, b)).sum()
 }
 
 pub fn solution() -> SolutionResult {

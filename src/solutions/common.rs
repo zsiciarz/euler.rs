@@ -1,4 +1,5 @@
-use std::iter::MultiplicativeIterator;
+use std::iter;
+use std::iter::{AdditiveIterator, MultiplicativeIterator};
 use std::mem;
 use std::num;
 use num::integer::Integer;
@@ -15,6 +16,11 @@ pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
         digits.push(r);
     }
     digits
+}
+
+/// Converts a slice of digits (in reverse order) to an integer
+pub fn undigits(ds: &[uint]) -> uint {
+    ds.iter().zip(iter::count(0, 1)).map(|(&a, b)| a * num::pow(10, b)).sum()
 }
 
 /// Finds all proper divisors of an integer.
