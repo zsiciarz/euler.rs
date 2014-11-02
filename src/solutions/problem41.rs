@@ -26,3 +26,11 @@ pub fn solution() -> SolutionResult {
     let mut primes = range(3, 8).flat_map(|n| pandigitals(n).into_iter()).filter(|&x| sieve.is_prime(x));
     Ok(primes.max().unwrap() as int)
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 100i), Ok(13));
+    }
+}
