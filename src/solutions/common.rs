@@ -19,8 +19,10 @@ pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
 }
 
 /// Converts a slice of digits (in reverse order) to an integer
-pub fn undigits(ds: &[uint]) -> uint {
-    ds.iter().zip(iter::count(0, 1)).map(|(&a, b)| a * num::pow(10, b)).sum()
+pub fn undigits<T: Integer + num::FromPrimitive>(ds: &[T]) -> T {
+    ds.iter().zip(iter::count(0, 1)).map(|(a, b)|
+        a * num::pow(num::from_int::<T>(10).unwrap(), b)
+    ).sum()
 }
 
 /// Finds all proper divisors of an integer.
