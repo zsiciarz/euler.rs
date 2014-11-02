@@ -16,3 +16,11 @@ pub fn solution() -> SolutionResult {
     Ok(all_digits[0] * all_digits[9] * all_digits[99] * all_digits[999] *
        all_digits[9999] * all_digits[99999] * all_digits[999999])
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_solution() {
+        assert_eq!(super::solution().map(|s| s % 100i), Ok(10));
+    }
+}
