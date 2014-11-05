@@ -27,6 +27,7 @@ mod problem33;
 mod problem34;
 mod problem40;
 mod problem41;
+mod problem42;
 mod problem67;
 
 #[deriving(PartialEq,Show)]
@@ -71,6 +72,7 @@ pub fn solution(problem: int) -> SolutionResult {
         34 => problem34::solution(),
         40 => problem40::solution(),
         41 => problem41::solution(),
+        42 => problem42::solution(),
         67 => problem67::solution(),
         _  => Err(NotImplemented),
     }
