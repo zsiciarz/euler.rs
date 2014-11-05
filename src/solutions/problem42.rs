@@ -20,8 +20,8 @@ fn word_value(name: &str) -> uint {
 pub fn solution() -> SolutionResult {
     let path = Path::new("data/p042_words.txt");
     let contents = File::open(&path).read_to_string().ok().expect("Cannot read file");
-    let names: Vec<&str> = contents[].split(',').collect();
-    Ok(names.into_iter().filter(|&x| is_triangular(word_value(x))).count() as int)
+    let names = contents[].split(',');
+    Ok(names.filter(|&x| is_triangular(word_value(x))).count() as int)
 }
 
 #[cfg(test)]
