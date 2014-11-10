@@ -15,7 +15,7 @@ pub fn solution() -> SolutionResult {
     }
     let mut sum = 0i;
     for (key, value) in divisors_map.iter() {
-        if *key != *value && divisors_map.find(value) == Some(key) {
+        if *key != *value && divisors_map.get(value) == Some(key) {
             sum += *value;
         }
     }
