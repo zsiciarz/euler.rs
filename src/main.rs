@@ -26,7 +26,7 @@ fn main() {
     let problem_number = match matches.opt_str("p") {
         Some(p) => { p },
         None => {
-            println!("Usage: {} <PROBLEM NUMBER>", program_name);
+            println!("Usage: {} --problem=<PROBLEM NUMBER>", program_name);
             return;
         }
     };
