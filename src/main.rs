@@ -8,7 +8,7 @@ extern crate slow_primes;
 use getopts::{optopt, getopts};
 
 #[cfg(not(test))]
-use solutions::{NotImplemented, SolutionNotFound, MatchFailed};
+use solutions::SolutionError;
 
 mod solutions;
 
@@ -34,9 +34,9 @@ fn main() {
         Some(problem_number) => match solutions::solution(problem_number) {
             Ok(x) => println!("{}", x),
             Err(e) => match e {
-                NotImplemented => println!("Not implemented yet"),
-                SolutionNotFound => println!("Solution not found"),
-                MatchFailed => println!("Pattern matching failed"),
+                SolutionError::NotImplemented => println!("Not implemented yet"),
+                SolutionError::SolutionNotFound => println!("Solution not found"),
+                SolutionError::MatchFailed => println!("Pattern matching failed"),
             }
         },
         None => println!("Invalid problem number")

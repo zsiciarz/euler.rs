@@ -1,4 +1,4 @@
-use super::{SolutionResult, MatchFailed};
+use super::{SolutionResult, SolutionError};
 use slow_primes;
 use slow_primes::Primes;
 
@@ -7,7 +7,7 @@ pub fn solution() -> SolutionResult {
     let primes = Primes::sieve(upper_bound as uint);
     match primes.primes().nth(10001 - 1) {
         Some(p) => Ok(p as int),
-        None => Err(MatchFailed),
+        None => Err(SolutionError::MatchFailed),
     }
 }
 

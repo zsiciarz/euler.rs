@@ -2,7 +2,7 @@ use std::iter::AdditiveIterator;
 use std::num;
 use num::BigInt;
 
-use super::{SolutionResult, MatchFailed};
+use super::{SolutionResult, SolutionError};
 use super::common::digits;
 
 pub fn solution() -> SolutionResult {
@@ -112,7 +112,7 @@ pub fn solution() -> SolutionResult {
     let pairs = first_digits.zip(range(1u, 10).rev());
     match pairs.map(|(a, b)| a * num::from_int(num::pow(10i, b)).unwrap()).sum().to_int() {
         Some(x) => Ok(x),
-        None => Err(MatchFailed),
+        None => Err(SolutionError::MatchFailed),
     }
 }
 

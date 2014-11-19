@@ -76,6 +76,6 @@ pub fn solution(problem: int) -> SolutionResult {
         41 => problem41::solution(),
         42 => problem42::solution(),
         67 => problem67::solution(),
-        _  => Err(NotImplemented),
+        _  => Err(SolutionError::NotImplemented),
     }
 }
