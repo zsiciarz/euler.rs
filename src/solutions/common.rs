@@ -2,6 +2,7 @@ use std::iter;
 use std::iter::{AdditiveIterator, MultiplicativeIterator};
 use std::mem;
 use std::num;
+use std::num::Float;
 use num::integer::Integer;
 use slow_primes::Primes;
 

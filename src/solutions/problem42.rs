@@ -1,5 +1,6 @@
 use std::io::File;
 use std::iter::AdditiveIterator;
+use std::num::Float;
 use std::path::Path;
 
 use super::SolutionResult;
