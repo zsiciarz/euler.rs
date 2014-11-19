@@ -1,16 +1,16 @@
 use std::iter;
 use std::iter::{AdditiveIterator, MultiplicativeIterator};
 use std::mem;
-use std::num;
-use std::num::Float;
+use std::num::{Float, FromPrimitive, from_int};
+use num;
 use num::integer::Integer;
 use slow_primes::Primes;
 
 /// Converts an integer to a vector of digits (in reverse order).
-pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
+pub fn digits<T: Integer + FromPrimitive>(n: T) -> Vec<T> {
     let mut digits = Vec::new();
     let mut q = n;
-    let base: T = num::from_int(10).unwrap();
+    let base: T = from_int(10).unwrap();
     while q > num::zero() {
         let r = q % base;
         q = q / base;
@@ -20,8 +20,8 @@ pub fn digits<T: Integer + num::FromPrimitive>(n: T) -> Vec<T> {
 }
 
 /// Converts a slice of digits (in reverse order) to an integer
-pub fn undigits<T: Clone + Integer + num::FromPrimitive>(ds: &[T]) -> T {
-    let base = num::from_int::<T>(10).unwrap();
+pub fn undigits<T: Clone + Integer + FromPrimitive>(ds: &[T]) -> T {
+    let base = from_int::<T>(10).unwrap();
     match ds {
         [ref i] => *i + num::zero(),
         [ref i, ref j] => *j * base + *i,
