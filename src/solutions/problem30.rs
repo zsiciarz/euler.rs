@@ -1,11 +1,11 @@
-use std::num;
+use std::num::Int;
 use std::iter::AdditiveIterator;
 
 use super::{SolutionResult};
 use super::common::digits;
 
 fn sum_powers(pow: uint, x: int) -> int {
-    digits(x).into_iter().map(|i| num::pow(i, pow)).sum()
+    digits(x).into_iter().map(|i| i.pow(pow)).sum()
 }
 
 pub fn solution() -> SolutionResult {
