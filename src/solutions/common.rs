@@ -1,5 +1,5 @@
 use std::iter;
-use std::iter::{AdditiveIterator, MultiplicativeIterator};
+use std::iter::MultiplicativeIterator;
 use std::mem;
 use std::num::{Float, FromPrimitive, from_int};
 use num;
@@ -26,9 +26,11 @@ pub fn undigits<T: Clone + Integer + FromPrimitive>(ds: &[T]) -> T {
         [ref i] => *i + num::zero(),
         [ref i, ref j] => *j * base + *i,
         _ => {
-            ds.iter().zip(iter::count(0, 1)).map(|(a, b)|
-                *a * num::pow(base.clone(), b)
-            ).sum()
+            let mut res: T = num::zero();
+            for (a, b) in ds.iter().zip(iter::count(0u, 1)) {
+                res = res + *a * num::pow(base.clone(), b);
+            }
+            res
         },
     }
 }
