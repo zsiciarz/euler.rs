@@ -9,10 +9,6 @@ authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 name = "euler"
 path = "src/main.rs"
 
-[dependencies.slow_primes]
-
-git = "https://github.com/huonw/slow_primes.git"
-
-[dependencies.num]
-
-git = "https://github.com/rust-lang/num"
+[dependencies]
+num = "~0.0.4"
+slow_primes = "~0.1.4"
