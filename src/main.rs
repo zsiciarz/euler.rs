@@ -19,7 +19,7 @@ fn main() {
     let opts = [
         optopt("p", "problem", "Problem number", "PROBLEM NUMBER"),
     ];
-    let matches = match getopts(args.tail(), opts) {
+    let matches = match getopts(args.tail(), &opts) {
         Ok(m) => { m },
         Err(f) => { panic!(f.to_string()) }
     };
