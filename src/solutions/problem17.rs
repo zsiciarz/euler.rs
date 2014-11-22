@@ -1,5 +1,3 @@
-use std::num;
-
 use super::SolutionResult;
 
 pub fn count_letters(n: uint) -> uint {
@@ -11,8 +9,8 @@ pub fn count_letters(n: uint) -> uint {
     let tens: Vec<uint> = vec!(
         "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
     ).iter().map(|&s| s.len()).collect();
-    let (d10, m10) = num::div_rem(n, 10);
-    let (d100, m100) = num::div_rem(n, 100);
+    let (d10, m10) = (n / 10, n % 10);
+    let (d100, m100) = (n / 100, n % 100);
     match n {
         _ if n < 20 => low_digits[n],
         _ if n < 100 => tens[d10 - 2] + count_letters(m10),
