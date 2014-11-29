@@ -4,11 +4,6 @@ name = "euler"
 version = "0.0.1"
 authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
-[[bin]]
-
-name = "euler"
-path = "src/main.rs"
-
 [dependencies]
 num = "~0.0.5"
 slow_primes = "~0.1.4"
