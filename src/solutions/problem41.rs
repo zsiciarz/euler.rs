@@ -16,7 +16,7 @@ fn pandigitals(n: uint) -> Vec<uint> {
 
 pub fn solution() -> SolutionResult {
     let sieve = Primes::sieve(9999999);
-    let mut primes = range(3, 8).flat_map(|n| pandigitals(n).into_iter()).filter(|&x| sieve.is_prime(x));
+    let primes = range(3, 8).flat_map(|n| pandigitals(n).into_iter()).filter(|&x| sieve.is_prime(x));
     Ok(primes.max().unwrap() as int)
 }
 
