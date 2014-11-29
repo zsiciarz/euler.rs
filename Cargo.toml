@@ -10,5 +10,5 @@ name = "euler"
 path = "src/main.rs"
 
 [dependencies]
-num = "~0.0.4"
+num = "~0.0.5"
 slow_primes = "~0.1.4"
