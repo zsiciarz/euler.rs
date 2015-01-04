@@ -1,5 +1,5 @@
 use std::iter::AdditiveIterator;
-use std::num::from_int;
+use std::num::{from_int, ToPrimitive};
 use num;
 use num::BigInt;
 

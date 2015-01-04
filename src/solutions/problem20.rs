@@ -1,5 +1,5 @@
 use std::iter::{AdditiveIterator, MultiplicativeIterator};
-use std::num;
+use std::num::{self, ToPrimitive};
 use num::BigInt;
 
 use super::{SolutionResult, SolutionError};
