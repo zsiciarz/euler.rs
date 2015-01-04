@@ -6,7 +6,7 @@ use super::SolutionResult;
 
 fn name_value(name: &str) -> uint {
     name.chars().filter_map(|c| if c != '\"' {
-        Some((c.to_ascii().as_byte() - 64u8) as uint)
+        Some((c as u8 - 64u8) as uint)
     } else {
         None
     }).sum()
