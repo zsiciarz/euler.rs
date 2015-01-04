@@ -7,13 +7,13 @@ use num::integer::Integer;
 use slow_primes::Primes;
 
 /// Converts an integer to a vector of digits (in reverse order).
-pub fn digits<T: Integer + FromPrimitive>(n: T) -> Vec<T> {
+pub fn digits<T: Clone + Integer + FromPrimitive>(n: T) -> Vec<T> {
     let mut digits = Vec::new();
     let mut q = n;
     let base: T = from_int(10).unwrap();
     while q > num::zero() {
-        let r = q % base;
-        q = q / base;
+        let r = q.clone() % base.clone();
+        q = q / base.clone();
         digits.push(r);
     }
     digits
@@ -23,12 +23,12 @@ pub fn digits<T: Integer + FromPrimitive>(n: T) -> Vec<T> {
 pub fn undigits<T: Clone + Integer + FromPrimitive>(ds: &[T]) -> T {
     let base = from_int::<T>(10).unwrap();
     match ds {
-        [ref i] => *i + num::zero(),
-        [ref i, ref j] => *j * base + *i,
+        [ref i] => i.clone() + num::zero(),
+        [ref i, ref j] => j.clone() * base + i.clone(),
         _ => {
             let mut res: T = num::zero();
             for (a, b) in ds.iter().zip(iter::count(0u, 1)) {
-                res = res + *a * num::pow(base.clone(), b);
+                res = res + a.clone() * num::pow(base.clone(), b);
             }
             res
         },
@@ -69,10 +69,10 @@ impl<T: Integer> Fib<T> {
     }
 }
 
-impl<T: Integer> Iterator<T> for Fib<T> {
+impl<T: Clone + Integer> Iterator<T> for Fib<T> {
     /// Returns next value from the Fibonacci sequence.
     fn next(&mut self) -> Option<T> {
-        let current = self.prev + self.current;
+        let current = self.prev.clone() + self.current.clone();
         let prev = mem::replace(&mut self.prev, current);
         Some(mem::replace(&mut self.current, prev))
     }
