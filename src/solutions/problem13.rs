@@ -1,5 +1,5 @@
 use std::iter::AdditiveIterator;
-use std::num::{Int, from_int};
+use std::num::{Int, from_int, ToPrimitive};
 use num::BigInt;
 
 use super::{SolutionResult, SolutionError};
@@ -110,7 +110,7 @@ pub fn solution() -> SolutionResult {
     ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).sum();
     let first_digits = digits(sum).into_iter().rev().take(10);
     let pairs = first_digits.zip(range(1u, 10).rev());
-    match pairs.map(|(a, b)| a * from_int(10i.pow(b)).unwrap()).sum().to_int() {
+    match pairs.map(|(a, b)| a * from_int::<BigInt>(10i.pow(b)).unwrap()).sum().to_int() {
         Some(x) => Ok(x),
         None => Err(SolutionError::MatchFailed),
     }
