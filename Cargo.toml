@@ -5,5 +5,5 @@ version = "0.0.1"
 authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [dependencies]
-num = "~0.0.5"
-slow_primes = "~0.1.4"
+num = "~0.1.4"
+slow_primes = "~0.1.5"
