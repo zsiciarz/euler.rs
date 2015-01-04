@@ -31,7 +31,7 @@ mod problem41;
 mod problem42;
 mod problem67;
 
-#[deriving(PartialEq,Show)]
+#[derive(PartialEq,Show)]
 pub enum SolutionError {
     #[cfg(not(test))]
     NotImplemented,
