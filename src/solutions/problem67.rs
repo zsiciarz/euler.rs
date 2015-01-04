@@ -10,7 +10,7 @@ pub fn solution() -> SolutionResult {
     let mut lines = contents[].lines();
     let mut rows = Vec::new();
     for line in lines {
-        let row = line.words().filter_map(from_str).collect::<Vec<int>>();
+        let row = line.words().filter_map(|s| s.parse()).collect::<Vec<int>>();
         rows.push(row);
     }
     for i in range(0u, rows.len() - 1).rev() {

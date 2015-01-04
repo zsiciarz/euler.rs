@@ -30,7 +30,7 @@ fn main() {
             return;
         }
     };
-    match from_str::<int>(problem_number[]) {
+    match (problem_number[].parse::<int>()) {
         Some(problem_number) => match solutions::solution(problem_number) {
             Ok(x) => println!("{}", x),
             Err(e) => match e {
