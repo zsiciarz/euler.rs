@@ -69,7 +69,9 @@ impl<T: Integer> Fib<T> {
     }
 }
 
-impl<T: Clone + Integer> Iterator<T> for Fib<T> {
+impl<T: Clone + Integer> Iterator for Fib<T> {
+    type Item = T;
+
     /// Returns next value from the Fibonacci sequence.
     fn next(&mut self) -> Option<T> {
         let current = self.prev.clone() + self.current.clone();

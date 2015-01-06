@@ -1,4 +1,4 @@
-#![feature(slicing_syntax)]
+#![feature(associated_types, slicing_syntax)]
 
 extern crate num;
 extern crate getopts;
