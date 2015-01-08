@@ -1,11 +1,11 @@
-use std::iter::AdditiveIterator;
 use std::num::{Int, from_int, ToPrimitive};
-use num::BigInt;
+use num::{BigInt, Zero};
 
 use super::{SolutionResult, SolutionError};
 use super::common::digits;
 
 pub fn solution() -> SolutionResult {
+    let zero: BigInt = Zero::zero();
     let sum = vec!(
         "37107287533902102798797998220837590246510135740250",
         "46376937677490009712648124896970078050417018260538",
@@ -107,10 +107,10 @@ pub fn solution() -> SolutionResult {
         "72107838435069186155435662884062257473692284509516",
         "20849603980134001723930671666823555245252804609722",
         "53503534226472524250874054075591789781264330331690",
-    ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).sum();
+    ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).fold(zero.clone(), |acc, x| acc + x);
     let first_digits = digits(sum).into_iter().rev().take(10);
     let pairs = first_digits.zip(range(1u, 10).rev());
-    match pairs.map(|(a, b)| a * from_int::<BigInt>(10i.pow(b)).unwrap()).sum().to_int() {
+    match pairs.map(|(a, b)| a * from_int::<BigInt>(10i.pow(b)).unwrap()).fold(zero.clone(), |acc, x| acc + x).to_int() {
         Some(x) => Ok(x),
         None => Err(SolutionError::MatchFailed),
     }
