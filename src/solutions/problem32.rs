@@ -11,9 +11,9 @@ fn pandigital_products() -> HashSet<uint> {
     for p in perms {
         for i in range(1u, 6) {
             for j in range(i + 1, 9u) {
-                let x = undigits(p[..i]);
-                let y = undigits(p[i..j]);
-                let z = undigits(p[j..]);
+                let x = undigits(&p[..i]);
+                let y = undigits(&p[i..j]);
+                let z = undigits(&p[j..]);
                 if x == y * z {
                     result.insert(x);
                 }
