@@ -6,4 +6,4 @@ authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [dependencies]
 num = "~0.1.7"
-slow_primes = "~0.1.6"
+slow_primes = "~0.1.7"
