@@ -39,10 +39,10 @@ pub enum SolutionError {
     MatchFailed,
 }
 
-type SolutionResult = Result<int, SolutionError>;
+type SolutionResult = Result<i32, SolutionError>;
 
 #[cfg(not(test))]
-pub fn solution(problem: int) -> SolutionResult {
+pub fn solution(problem: isize) -> SolutionResult {
     println!("Running solution for problem #{}", problem);
     match problem {
         1 => problem1::solution(),

@@ -1,4 +1,5 @@
 #![feature(slicing_syntax)]
+#![allow(unstable)]
 
 extern crate num;
 extern crate getopts;
@@ -30,7 +31,7 @@ fn main() {
             return;
         }
     };
-    match problem_number[].parse::<int>() {
+    match problem_number[].parse::<isize>() {
         Some(problem_number) => match solutions::solution(problem_number) {
             Ok(x) => println!("{}", x),
             Err(e) => match e {

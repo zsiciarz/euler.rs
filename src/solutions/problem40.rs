@@ -2,8 +2,8 @@ use super::common::digits;
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
-    let mut i = 1i;
-    let mut all_digits = vec![1i];
+    let mut i = 1i32;
+    let mut all_digits = vec![1i32];
     loop {
         i += 1;
         let mut digs = digits(i);
@@ -21,6 +21,6 @@ pub fn solution() -> SolutionResult {
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100i), Ok(10));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(10));
     }
 }

@@ -3,7 +3,7 @@ use super::common::num_divisors;
 use slow_primes::Primes;
 
 pub fn solution() -> SolutionResult {
-    let mut n = 1;
+    let mut n = 1i32;
     let primes = Primes::sieve(100000);
     loop {
         let triangular = n * (n + 1) / 2;
@@ -18,6 +18,6 @@ pub fn solution() -> SolutionResult {
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 10000i), Ok(6500));
+        assert_eq!(super::solution().map(|s| s % 10000), Ok(6500));
     }
 }

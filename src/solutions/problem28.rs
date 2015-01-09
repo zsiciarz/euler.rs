@@ -1,6 +1,6 @@
 use super::{SolutionResult};
 
-fn sum_diagonals(level: int) -> (int, int) {
+fn sum_diagonals(level: i32) -> (i32, i32) {
     if level == 1 {
         return (1, 1);
     }
@@ -18,6 +18,6 @@ pub fn solution() -> SolutionResult {
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100i), Ok(1));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(1));
     }
 }

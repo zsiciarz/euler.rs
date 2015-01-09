@@ -4,18 +4,18 @@ use std::iter::AdditiveIterator;
 use super::{SolutionResult};
 use super::common::digits;
 
-fn sum_powers(pow: uint, x: int) -> int {
+fn sum_powers(pow: usize, x: i32) -> i32 {
     digits(x).into_iter().map(|i| i.pow(pow)).sum()
 }
 
 pub fn solution() -> SolutionResult {
-    Ok(range(2i, 1234567).filter(|&x| x == sum_powers(5, x)).sum())
+    Ok(range(2i32, 1234567).filter(|&x| x == sum_powers(5, x)).sum())
 }
 
 #[cfg(test)]
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100i), Ok(39));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(39));
     }
 }

@@ -1,11 +1,11 @@
 use super::{SolutionResult, SolutionError};
 
-fn is_pythagorean(a2: int, b2: int, c2: int) -> bool {
+fn is_pythagorean(a2: i32, b2: i32, c2: i32) -> bool {
     (a2 + b2 == c2) || (b2 + c2 == a2) || (a2 + c2 == b2)
 }
 
 pub fn solution() -> SolutionResult {
-    for a in range(1i, 500) {
+    for a in range(1i32, 500) {
         for b in range(a, a + 1000) {
             if b > 500 {
                 continue;
@@ -23,6 +23,6 @@ pub fn solution() -> SolutionResult {
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 10000i), Ok(5000));
+        assert_eq!(super::solution().map(|s| s % 10000), Ok(5000));
     }
 }

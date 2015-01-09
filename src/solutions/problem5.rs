@@ -3,13 +3,13 @@ use num::integer::lcm;
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
-    Ok(range(1i, 20).fold(1, lcm))
+    Ok(range(1i32, 20).fold(1, lcm))
 }
 
 #[cfg(test)]
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100i), Ok(60));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(60));
     }
 }

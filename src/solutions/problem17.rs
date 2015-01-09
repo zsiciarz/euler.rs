@@ -1,12 +1,12 @@
 use super::SolutionResult;
 
-pub fn count_letters(n: uint) -> uint {
-    let low_digits: Vec<uint> = vec!(
+pub fn count_letters(n: usize) -> usize {
+    let low_digits: Vec<usize> = vec!(
         "", "one", "two", "three", "four", "five", "six", "seven", "eight",
         "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
         "sixteen", "seventeen", "eighteen", "nineteen"
     ).iter().map(|&s| s.len()).collect();
-    let tens: Vec<uint> = vec!(
+    let tens: Vec<usize> = vec!(
         "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
     ).iter().map(|&s| s.len()).collect();
     let (d10, m10) = (n / 10, n % 10);
@@ -20,14 +20,14 @@ pub fn count_letters(n: uint) -> uint {
 }
 
 pub fn solution() -> SolutionResult {
-    let answer = "onethousand".len() + range(1u, 1000u).fold(0, |acc, x| acc + count_letters(x));
-    Ok(answer as int)
+    let answer = "onethousand".len() + range(1, 1000).fold(0, |acc, x| acc + count_letters(x));
+    Ok(answer as i32)
 }
 
 #[cfg(test)]
 mod test {
     #[test]
     fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100i), Ok(24));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(24));
     }
 }
