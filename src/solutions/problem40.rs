@@ -2,8 +2,8 @@ use super::common::digits;
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
-    let mut i = 1i32;
-    let mut all_digits = vec![1i32];
+    let mut i = 1i64;
+    let mut all_digits = vec![1i64];
     loop {
         i += 1;
         let mut digs = digits(i);

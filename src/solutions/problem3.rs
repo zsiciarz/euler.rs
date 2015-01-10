@@ -4,7 +4,7 @@ use slow_primes::Primes;
 pub fn solution() -> SolutionResult {
     match Primes::sieve(10000).factor(600851475143).unwrap().into_iter().last() {
         None => Err(SolutionError::MatchFailed),
-        Some((p, _)) => Ok(p as i32)
+        Some((p, _)) => Ok(p as i64)
     }
 }
 

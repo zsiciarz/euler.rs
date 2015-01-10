@@ -1,6 +1,6 @@
 use super::SolutionResult;
 
-fn collatz_length(n: i32) -> i32 {
+fn collatz_length(n: i64) -> i64 {
     let mut x = n;
     let mut i = 1;
     while x > 1 {
@@ -16,7 +16,7 @@ fn collatz_length(n: i32) -> i32 {
 pub fn solution() -> SolutionResult {
     let mut max_length = 0;
     let mut max_index = 0;
-    for i in range(1i32, 1000000) {
+    for i in range(1i64, 1000000) {
         let length = collatz_length(i);
         if length > max_length {
             max_index = i;
@@ -30,7 +30,6 @@ pub fn solution() -> SolutionResult {
 mod test {
     #[test]
     fn test_solution() {
-        // TODO: i32 overflow
-        // assert_eq!(super::solution().map(|s| s % 100), Ok(99));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(99));
     }
 }

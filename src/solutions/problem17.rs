@@ -21,7 +21,7 @@ pub fn count_letters(n: usize) -> usize {
 
 pub fn solution() -> SolutionResult {
     let answer = "onethousand".len() + range(1, 1000).fold(0, |acc, x| acc + count_letters(x));
-    Ok(answer as i32)
+    Ok(answer as i64)
 }
 
 #[cfg(test)]

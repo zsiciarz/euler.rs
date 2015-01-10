@@ -9,7 +9,7 @@ pub fn solution() -> SolutionResult {
     let base: BigInt = from_int(10).unwrap();
     let threshold: BigInt = num::pow(base, 999);
     let fib: Fib<BigInt> = Fib::new();
-    Ok(1 + fib.take_while(|i| *i < threshold).count() as i32)
+    Ok(1 + fib.take_while(|i| *i < threshold).count() as i64)
 }
 
 #[cfg(test)]

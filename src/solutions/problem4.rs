@@ -1,7 +1,7 @@
 use super::SolutionResult;
 use super::common::digits;
 
-fn is_palindromic(n: i32) -> bool {
+fn is_palindromic(n: i64) -> bool {
     let digits = digits(n);
     let mut reversed = digits.clone();
     reversed.reverse();
@@ -10,8 +10,8 @@ fn is_palindromic(n: i32) -> bool {
 
 pub fn solution() -> SolutionResult {
     let mut result = 0;
-    for x in range(100i32, 999) {
-        for y in range(100i32, 999) {
+    for x in range(100i64, 999) {
+        for y in range(100i64, 999) {
             let product = x * y;
             if is_palindromic(product) && product > result {
                 result = product;

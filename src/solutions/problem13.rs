@@ -1,4 +1,4 @@
-use std::num::{Int, from_i32, ToPrimitive};
+use std::num::{Int, from_i64, ToPrimitive};
 use num::{BigInt, Zero};
 
 use super::{SolutionResult, SolutionError};
@@ -110,7 +110,7 @@ pub fn solution() -> SolutionResult {
     ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).fold(zero.clone(), |acc, x| acc + x);
     let first_digits = digits(sum).into_iter().rev().take(10);
     let pairs = first_digits.zip(range(1, 10).rev());
-    match pairs.map(|(a, b)| a * from_i32::<BigInt>(10i32.pow(b)).unwrap()).fold(zero.clone(), |acc, x| acc + x).to_i32() {
+    match pairs.map(|(a, b)| a * from_i64::<BigInt>(10i64.pow(b)).unwrap()).fold(zero.clone(), |acc, x| acc + x).to_i64() {
         Some(x) => Ok(x),
         None => Err(SolutionError::MatchFailed),
     }
@@ -120,7 +120,6 @@ pub fn solution() -> SolutionResult {
 mod test {
     #[test]
     fn test_solution() {
-        // TODO: i32 overflow
-        // assert_eq!(super::solution().map(|s| s % 100), Ok(30));
+        assert_eq!(super::solution().map(|s| s % 100), Ok(30));
     }
 }

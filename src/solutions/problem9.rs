@@ -1,11 +1,11 @@
 use super::{SolutionResult, SolutionError};
 
-fn is_pythagorean(a2: i32, b2: i32, c2: i32) -> bool {
+fn is_pythagorean(a2: i64, b2: i64, c2: i64) -> bool {
     (a2 + b2 == c2) || (b2 + c2 == a2) || (a2 + c2 == b2)
 }
 
 pub fn solution() -> SolutionResult {
-    for a in range(1i32, 500) {
+    for a in range(1i64, 500) {
         for b in range(a, a + 1000) {
             if b > 500 {
                 continue;

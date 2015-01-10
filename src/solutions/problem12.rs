@@ -3,7 +3,7 @@ use super::common::num_divisors;
 use slow_primes::Primes;
 
 pub fn solution() -> SolutionResult {
-    let mut n = 1i32;
+    let mut n = 1i64;
     let primes = Primes::sieve(100000);
     loop {
         let triangular = n * (n + 1) / 2;

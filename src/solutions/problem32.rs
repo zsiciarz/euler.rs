@@ -24,7 +24,7 @@ fn pandigital_products() -> HashSet<usize> {
 }
 
 pub fn solution() -> SolutionResult {
-    Ok(pandigital_products().into_iter().sum() as i32)
+    Ok(pandigital_products().into_iter().sum() as i64)
 }
 
 #[cfg(test)]

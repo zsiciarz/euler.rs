@@ -13,7 +13,7 @@ pub fn solution() -> SolutionResult {
             s.insert(num::pow(a, b));
         }
     }
-    Ok(s.len() as i32)
+    Ok(s.len() as i64)
 }
 
 #[cfg(test)]

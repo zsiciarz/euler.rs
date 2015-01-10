@@ -4,12 +4,12 @@ use std::iter::AdditiveIterator;
 use super::{SolutionResult};
 use super::common::digits;
 
-fn sum_powers(pow: usize, x: i32) -> i32 {
+fn sum_powers(pow: usize, x: i64) -> i64 {
     digits(x).into_iter().map(|i| i.pow(pow)).sum()
 }
 
 pub fn solution() -> SolutionResult {
-    Ok(range(2i32, 1234567).filter(|&x| x == sum_powers(5, x)).sum())
+    Ok(range(2i64, 1234567).filter(|&x| x == sum_powers(5, x)).sum())
 }
 
 #[cfg(test)]

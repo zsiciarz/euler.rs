@@ -1,6 +1,6 @@
 use super::{SolutionResult};
 
-fn sum_diagonals(level: i32) -> (i32, i32) {
+fn sum_diagonals(level: i64) -> (i64, i64) {
     if level == 1 {
         return (1, 1);
     }

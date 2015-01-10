@@ -39,7 +39,7 @@ pub enum SolutionError {
     MatchFailed,
 }
 
-type SolutionResult = Result<i32, SolutionError>;
+type SolutionResult = Result<i64, SolutionError>;
 
 #[cfg(not(test))]
 pub fn solution(problem: isize) -> SolutionResult {
