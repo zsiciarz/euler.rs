@@ -10,7 +10,7 @@ fn sum_divisors(n: i64) -> i64 {
 
 pub fn solution() -> SolutionResult {
     let mut divisors_map = HashMap::new();
-    for i in range(2i64, 10000) {
+    for i in 2..10000 {
         divisors_map.insert(i, sum_divisors(i));
     }
     let mut sum = 0i64;

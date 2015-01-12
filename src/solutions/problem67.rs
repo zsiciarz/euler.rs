@@ -13,8 +13,8 @@ pub fn solution() -> SolutionResult {
         let row = line.words().filter_map(|s| s.parse()).collect::<Vec<i64>>();
         rows.push(row);
     }
-    for i in range(0, rows.len() - 1).rev() {
-        for j in range(0, i + 1) {
+    for i in (0..rows.len() - 1).rev() {
+        for j in 0..i + 1 {
             (*rows[i])[j] += cmp::max(rows[i + 1][j], rows[i + 1][j + 1]);
         }
     }

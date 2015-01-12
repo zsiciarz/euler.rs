@@ -4,7 +4,7 @@ use std::num::Int;
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
-    Ok(range(1i64, 101).sum().pow(2) - range(1i64, 101).map(|x| x.pow(2)).sum())
+    Ok((1i64..101).sum().pow(2) - (1..101).map(|x| x.pow(2)).sum())
 }
 
 #[cfg(test)]

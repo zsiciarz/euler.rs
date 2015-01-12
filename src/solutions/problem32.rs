@@ -9,8 +9,8 @@ fn pandigital_products() -> HashSet<usize> {
     let mut perms = v.permutations();
     let mut result = HashSet::new();
     for p in perms {
-        for i in range(1, 6) {
-            for j in range(i + 1, 9) {
+        for i in 1..6 {
+            for j in i + 1..9 {
                 let x = undigits(&p[..i]);
                 let y = undigits(&p[i..j]);
                 let z = undigits(&p[j..]);

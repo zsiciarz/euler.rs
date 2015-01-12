@@ -5,8 +5,8 @@ fn is_pythagorean(a2: i64, b2: i64, c2: i64) -> bool {
 }
 
 pub fn solution() -> SolutionResult {
-    for a in range(1i64, 500) {
-        for b in range(a, a + 1000) {
+    for a in 1..500 {
+        for b in a..a + 1000 {
             if b > 500 {
                 continue;
             }

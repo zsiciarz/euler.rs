@@ -40,7 +40,7 @@ pub fn divisors(n: i64) -> Vec<i64> {
     let limit = (n as f32).sqrt().ceil() as i64;
     let mut divisors = Vec::new();
     divisors.push(1i64);
-    for i in range(2i64, limit) {
+    for i in 2..(limit) {
         if n % i == 0 {
             divisors.push(i);
             divisors.push(n / i);
