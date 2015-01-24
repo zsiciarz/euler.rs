@@ -20,7 +20,7 @@ pub fn count_letters(n: usize) -> usize {
 }
 
 pub fn solution() -> SolutionResult {
-    let answer = "onethousand".len() + (1..1000).fold(0, |acc, x| acc + count_letters(x));
+    let answer = "onethousand".len() + (1us..1000).fold(0, |acc, x| acc + count_letters(x));
     Ok(answer as i64)
 }
 

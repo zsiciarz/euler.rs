@@ -16,7 +16,7 @@ fn collatz_length(n: i64) -> i64 {
 pub fn solution() -> SolutionResult {
     let mut max_length = 0;
     let mut max_index = 0;
-    for i in 1..1000000 {
+    for i in 1i64..1000000 {
         let length = collatz_length(i);
         if length > max_length {
             max_index = i;

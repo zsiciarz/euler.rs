@@ -4,12 +4,12 @@ use std::iter::AdditiveIterator;
 use super::SolutionResult;
 use super::common::undigits;
 
-fn pandigital_products() -> HashSet<usize> {
-    let v = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+fn pandigital_products() -> HashSet<i64> {
+    let v = [1i64, 2, 3, 4, 5, 6, 7, 8, 9];
     let mut perms = v.permutations();
     let mut result = HashSet::new();
     for p in perms {
-        for i in 1..6 {
+        for i in 1us..6 {
             for j in i + 1..9 {
                 let x = undigits(&p[..i]);
                 let y = undigits(&p[i..j]);
@@ -24,7 +24,7 @@ fn pandigital_products() -> HashSet<usize> {
 }
 
 pub fn solution() -> SolutionResult {
-    Ok(pandigital_products().into_iter().sum() as i64)
+    Ok(pandigital_products().into_iter().sum())
 }
 
 #[cfg(test)]

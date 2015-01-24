@@ -9,7 +9,7 @@ fn sum_powers(pow: usize, x: i64) -> i64 {
 }
 
 pub fn solution() -> SolutionResult {
-    Ok((2..1234567).filter(|&x| x == sum_powers(5, x)).sum())
+    Ok((2i64..1234567).filter(|&x| x == sum_powers(5, x)).sum())
 }
 
 #[cfg(test)]

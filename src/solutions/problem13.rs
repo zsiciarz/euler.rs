@@ -109,7 +109,7 @@ pub fn solution() -> SolutionResult {
         "53503534226472524250874054075591789781264330331690",
     ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).fold(zero.clone(), |acc, x| acc + x);
     let first_digits = digits(sum).into_iter().rev().take(10);
-    let pairs = first_digits.zip((1..10).rev());
+    let pairs = first_digits.zip((1us..10).rev());
     match pairs.map(|(a, b)| a * from_i64::<BigInt>(10i64.pow(b)).unwrap()).fold(zero.clone(), |acc, x| acc + x).to_i64() {
         Some(x) => Ok(x),
         None => Err(SolutionError::MatchFailed),

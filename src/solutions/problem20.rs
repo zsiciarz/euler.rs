@@ -7,7 +7,7 @@ use super::common::digits;
 pub fn solution() -> SolutionResult {
     let one: BigInt = One::one();
     let zero: BigInt = Zero::zero();
-    let fac100 = (1..101).map(|x| num::from_i64::<BigInt>(x).unwrap()).fold(one, |acc, x| acc * x);
+    let fac100 = (1i64..101).map(|x| num::from_i64::<BigInt>(x).unwrap()).fold(one, |acc, x| acc * x);
     match digits(fac100).into_iter().fold(zero, |acc, x| acc + x).to_i64() {
         Some(x) => Ok(x),
         None => Err(SolutionError::MatchFailed),
