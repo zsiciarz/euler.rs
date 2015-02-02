@@ -1,12 +1,11 @@
-#![feature(slicing_syntax)]
-#![allow(unstable)]
+#![feature(collections, core, io, os, path, unicode)]
 
 extern crate num;
 extern crate getopts;
 extern crate slow_primes;
 
 #[cfg(not(test))]
-use getopts::{optopt, getopts};
+use getopts::Options;
 
 #[cfg(not(test))]
 use solutions::SolutionError;
@@ -17,10 +16,9 @@ mod solutions;
 fn main() {
     let args = std::os::args();
     let program_name = args[0].clone();
-    let opts = [
-        optopt("p", "problem", "Problem number", "PROBLEM NUMBER"),
-    ];
-    let matches = match getopts(args.tail(), &opts) {
+    let mut opts = Options::new();
+    opts.optopt("p", "problem", "Problem number", "PROBLEM NUMBER");
+    let matches = match opts.parse(args.tail()) {
         Ok(m) => { m },
         Err(f) => { panic!(f.to_string()) }
     };
