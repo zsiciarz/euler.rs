@@ -6,7 +6,7 @@ use super::common::undigits;
 
 fn pandigital_products() -> HashSet<i64> {
     let v = [1i64, 2, 3, 4, 5, 6, 7, 8, 9];
-    let mut perms = v.permutations();
+    let perms = v.permutations();
     let mut result = HashSet::new();
     for p in perms {
         for i in 1us..6 {

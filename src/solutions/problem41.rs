@@ -6,7 +6,7 @@ use super::common::undigits;
 fn pandigitals(n: usize) -> Vec<usize> {
     let v = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let v = &v[..n];
-    let mut perms = v.permutations();
+    let perms = v.permutations();
     let mut result = Vec::new();
     for p in perms {
         result.push(undigits(&p[]));
