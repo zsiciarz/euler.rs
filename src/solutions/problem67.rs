@@ -1,6 +1,6 @@
 use std::cmp;
 use std::old_io::File;
-use std::path::Path;
+use std::old_path::Path;
 
 use super::SolutionResult;
 
