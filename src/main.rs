@@ -29,8 +29,8 @@ fn main() {
             return;
         }
     };
-    match problem_number[].parse::<isize>() {
-        Some(problem_number) => match solutions::solution(problem_number) {
+    match problem_number.parse::<isize>() {
+        Ok(problem_number) => match solutions::solution(problem_number) {
             Ok(x) => println!("{}", x),
             Err(e) => match e {
                 SolutionError::NotImplemented => println!("Not implemented yet"),
@@ -38,6 +38,6 @@ fn main() {
                 SolutionError::MatchFailed => println!("Pattern matching failed"),
             }
         },
-        None => println!("Invalid problem number")
+        Err(_) => println!("Invalid problem number")
     };
 }
