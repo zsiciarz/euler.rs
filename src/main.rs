@@ -1,4 +1,4 @@
-#![feature(collections, core, io, path, unicode)]
+#![feature(collections, core, env, io, path, unicode)]
 
 extern crate num;
 extern crate getopts;
@@ -14,18 +14,17 @@ mod solutions;
 
 #[cfg(not(test))]
 fn main() {
-    let args = std::os::args();
-    let program_name = args[0].clone();
+    let args = std::env::args();
     let mut opts = Options::new();
     opts.optopt("p", "problem", "Problem number", "PROBLEM NUMBER");
-    let matches = match opts.parse(args.tail()) {
+    let matches = match opts.parse(args) {
         Ok(m) => { m },
         Err(f) => { panic!(f.to_string()) }
     };
     let problem_number = match matches.opt_str("p") {
         Some(p) => { p },
         None => {
-            println!("Usage: {} --problem=<PROBLEM NUMBER>", program_name);
+            println!("Usage: euler --problem=<PROBLEM NUMBER>");
             return;
         }
     };
