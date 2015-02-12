@@ -1,4 +1,4 @@
-#![feature(collections, core, env, io, path, unicode)]
+#![feature(collections, core, io, path, unicode)]
 
 extern crate num;
 extern crate getopts;
