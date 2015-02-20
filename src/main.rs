@@ -1,4 +1,4 @@
-#![feature(collections, core, env, io, path, str_words, unicode)]
+#![feature(collections, core, env, old_io, old_path, str_words, unicode)]
 
 extern crate num;
 extern crate getopts;
