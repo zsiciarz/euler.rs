@@ -7,7 +7,7 @@ use super::SolutionResult;
 pub fn solution() -> SolutionResult {
     let path = Path::new("data/p067_triangle.txt");
     let contents = File::open(&path).read_to_string().ok().expect("Cannot read file");
-    let lines = contents[].lines();
+    let lines = contents[..].lines();
     let mut rows = Vec::new();
     for line in lines {
         let row = line.words().filter_map(|s| s.parse().ok()).collect::<Vec<i64>>();

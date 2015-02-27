@@ -15,7 +15,7 @@ fn name_value(name: &str) -> u32 {
 pub fn solution() -> SolutionResult {
     let path = Path::new("data/p022_names.txt");
     let contents = File::open(&path).read_to_string().ok().expect("Cannot read file");
-    let mut names: Vec<&str> = contents[].split(',').collect();
+    let mut names: Vec<&str> = contents[..].split(',').collect();
     names.sort();
     Ok(names.into_iter().enumerate().map(|(i, name)| (i as u32 + 1) * name_value(name)).sum() as i64)
 }

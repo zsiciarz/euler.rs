@@ -9,7 +9,7 @@ fn pandigitals(n: usize) -> Vec<usize> {
     let perms = v.permutations();
     let mut result = Vec::new();
     for p in perms {
-        result.push(undigits(&p[]));
+        result.push(undigits(&p[..]));
     }
     result
 }
