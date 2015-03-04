@@ -4,7 +4,7 @@ use std::iter::AdditiveIterator;
 use super::{SolutionResult};
 use super::common::digits;
 
-fn sum_powers(pow: usize, x: i64) -> i64 {
+fn sum_powers(pow: u32, x: i64) -> i64 {
     digits(x).into_iter().map(|i| i.pow(pow)).sum()
 }
 
