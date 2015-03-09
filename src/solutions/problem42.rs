@@ -1,7 +1,7 @@
-use std::old_io::File;
+use std::fs::File;
+use std::io::Read;
 use std::iter::AdditiveIterator;
 use std::num::Float;
-use std::old_path::Path;
 
 use super::SolutionResult;
 
@@ -19,8 +19,9 @@ fn word_value(name: &str) -> u32 {
 }
 
 pub fn solution() -> SolutionResult {
-    let path = Path::new("data/p042_words.txt");
-    let contents = File::open(&path).read_to_string().ok().expect("Cannot read file");
+    let path = "data/p042_words.txt";
+    let mut contents = String::new();
+    File::open(path).unwrap().read_to_string(&mut contents).ok().expect("Cannot read file");
     let names = contents[..].split(',');
     Ok(names.filter(|&x| is_triangular(word_value(x))).count() as i64)
 }

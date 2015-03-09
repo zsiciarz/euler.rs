@@ -1,12 +1,13 @@
 use std::cmp;
-use std::old_io::File;
-use std::old_path::Path;
+use std::fs::File;
+use std::io::Read;
 
 use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
-    let path = Path::new("data/p018_triangle.txt");
-    let contents = File::open(&path).read_to_string().ok().expect("Cannot read file");
+    let path = "data/p018_triangle.txt";
+    let mut contents = String::new();
+    File::open(path).unwrap().read_to_string(&mut contents).ok().expect("Cannot read file");
     let lines = contents[..].lines();
     let mut rows = Vec::new();
     for line in lines {
