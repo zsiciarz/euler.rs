@@ -1,4 +1,3 @@
-use std::iter;
 use std::iter::MultiplicativeIterator;
 use std::mem;
 use std::num::{Float, FromPrimitive, from_i64};
@@ -27,7 +26,7 @@ pub fn undigits<T: Clone + Integer + FromPrimitive>(ds: &[T]) -> T {
         [ref i, ref j] => j.clone() * base + i.clone(),
         _ => {
             let mut res: T = num::zero();
-            for (a, b) in ds.iter().zip(iter::count(0, 1)) {
+            for (a, b) in ds.iter().zip(0..) {
                 res = res + a.clone() * num::pow(base.clone(), b);
             }
             res
