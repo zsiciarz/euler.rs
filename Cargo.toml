@@ -6,5 +6,5 @@ authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [dependencies]
 getopts = "~0.2.4"
-num = "~0.1.16"
+num = "~0.1.17"
 slow_primes = "~0.1.11"
