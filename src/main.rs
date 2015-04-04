@@ -1,4 +1,4 @@
-#![feature(collections, core, str_words)]
+#![feature(collections, core, slice_patterns, str_words)]
 
 extern crate num;
 extern crate getopts;
