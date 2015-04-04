@@ -1,7 +1,6 @@
 use std::fs::File;
 use std::io::Read;
 use std::iter::AdditiveIterator;
-use std::num::Float;
 
 use super::SolutionResult;
 

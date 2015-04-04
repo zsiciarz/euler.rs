@@ -1,4 +1,3 @@
-use std::num::Int;
 use std::iter::AdditiveIterator;
 
 use super::{SolutionResult};

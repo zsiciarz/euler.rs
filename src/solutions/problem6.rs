@@ -1,5 +1,4 @@
 use std::iter::AdditiveIterator;
-use std::num::Int;
 
 use super::SolutionResult;
 
