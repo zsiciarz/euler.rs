@@ -1,6 +1,6 @@
-use std::num::FromPrimitive;
 use num;
 use num::BigInt;
+use num::traits::FromPrimitive;
 
 use super::SolutionResult;
 use super::common::Fib;

@@ -1,5 +1,5 @@
-use std::num::{Int, from_i64, ToPrimitive};
 use num::{BigInt, Zero};
+use num::traits::{FromPrimitive, ToPrimitive};
 
 use super::{SolutionResult, SolutionError};
 use super::common::digits;
@@ -110,7 +110,11 @@ pub fn solution() -> SolutionResult {
     ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).fold(zero.clone(), |acc, x| acc + x);
     let first_digits = digits(sum).into_iter().rev().take(10);
     let pairs = first_digits.zip((1..10).rev());
-    match pairs.map(|(a, b)| a * from_i64::<BigInt>(10i64.pow(b)).unwrap()).fold(zero.clone(), |acc, x| acc + x).to_i64() {
+    let powers = pairs.map(|(a, b)| {
+        let tmp: BigInt = FromPrimitive::from_i64(10i64.pow(b)).unwrap();
+        a * tmp
+    });
+    match ToPrimitive::to_i64(&powers.fold(zero.clone(), |acc, x| acc + x)) {
         Some(x) => Ok(x),
         None => Err(SolutionError::MatchFailed),
     }
