@@ -6,5 +6,7 @@ authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [dependencies]
 getopts = "~0.2.9"
-num = "~0.1.21"
-slow_primes = "~0.1.11"
+num = "~0.1.22"
+
+[dependencies.slow_primes]
+git = "https://github.com/huonw/slow_primes.git"
