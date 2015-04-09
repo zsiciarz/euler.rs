@@ -1,11 +1,9 @@
-use std::iter::AdditiveIterator;
-
 use super::{SolutionResult};
 use slow_primes::Primes;
 
 pub fn solution() -> SolutionResult {
     let primes = Primes::sieve(2000000);
-    Ok(primes.primes().take_while(|&p| p < 2000000).sum() as i64)
+    Ok(primes.primes().take_while(|&p| p < 2000000).fold(0, |acc, x| acc + x) as i64)
 }
 
 #[cfg(test)]

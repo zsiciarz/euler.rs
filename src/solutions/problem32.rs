@@ -1,5 +1,4 @@
 use std::collections::HashSet;
-use std::iter::AdditiveIterator;
 
 use super::SolutionResult;
 use super::common::undigits;
@@ -24,7 +23,7 @@ fn pandigital_products() -> HashSet<i64> {
 }
 
 pub fn solution() -> SolutionResult {
-    Ok(pandigital_products().into_iter().sum())
+    Ok(pandigital_products().into_iter().fold(0, |acc, x| acc + x))
 }
 
 #[cfg(test)]

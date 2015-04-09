@@ -1,11 +1,10 @@
 use std::collections::HashMap;
-use std::iter::AdditiveIterator;
 
 use super::SolutionResult;
 use super::common::divisors;
 
 fn sum_divisors(n: i64) -> i64 {
-    divisors(n).into_iter().sum()
+    divisors(n).into_iter().fold(0, |acc, x| acc + x)
 }
 
 pub fn solution() -> SolutionResult {

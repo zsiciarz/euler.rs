@@ -1,4 +1,3 @@
-use std::iter::AdditiveIterator;
 use std::iter::MultiplicativeIterator;
 
 use super::common::digits;
@@ -9,7 +8,7 @@ fn factorial(n: i64) -> i64 {
 }
 
 pub fn solution() -> SolutionResult {
-    Ok((3i64..2540160).filter(|&x| x == digits(x).into_iter().map(factorial).sum()).sum())
+    Ok((3i64..2540160).filter(|&x| x == digits(x).into_iter().map(factorial).fold(0, |acc, x| acc + x)).fold(0, |acc, x| acc + x))
 }
 
 #[cfg(test)]

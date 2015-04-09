@@ -1,6 +1,5 @@
 use std::fs::File;
 use std::io::Read;
-use std::iter::AdditiveIterator;
 
 use super::SolutionResult;
 
@@ -14,7 +13,7 @@ fn word_value(name: &str) -> u32 {
         Some((c as u8 - 64u8) as u32)
     } else {
         None
-    }).sum()
+    }).fold(0, |acc, x| acc + x)
 }
 
 pub fn solution() -> SolutionResult {
