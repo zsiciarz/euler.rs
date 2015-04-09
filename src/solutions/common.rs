@@ -1,4 +1,3 @@
-use std::iter::MultiplicativeIterator;
 use std::mem;
 use num;
 use num::integer::Integer;
@@ -51,7 +50,7 @@ pub fn divisors(n: i64) -> Vec<i64> {
 pub fn num_divisors(n: i64, primes: &Primes) -> i64 {
     let factors = primes.factor(n as usize);
     match factors {
-        Ok(factors) => factors.into_iter().map(|(_, x)| x + 1).product() as i64,
+        Ok(factors) => factors.into_iter().fold(1, |acc, (_, x)| acc * (x + 1)) as i64,
         Err(_) => 0i64,
     }
 }

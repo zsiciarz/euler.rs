@@ -1,10 +1,8 @@
-use std::iter::MultiplicativeIterator;
-
 use super::common::digits;
 use super::SolutionResult;
 
 fn factorial(n: i64) -> i64 {
-    return (2..n + 1).product()
+    return (2..n + 1).fold(1, |acc, x| acc * x)
 }
 
 pub fn solution() -> SolutionResult {
