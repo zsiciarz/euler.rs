@@ -8,7 +8,7 @@ pub fn solution() -> SolutionResult {
         i += 1;
         let mut digs = digits(i);
         digs.reverse();
-        all_digits.push_all(&digs[..]);
+        all_digits.extend(digs);
         if all_digits.len() > 999999 {
             break;
         }
