@@ -11,7 +11,7 @@ pub fn solution() -> SolutionResult {
     let lines = contents[..].lines();
     let mut rows = Vec::new();
     for line in lines {
-        let row = line.words().filter_map(|s| s.parse().ok()).collect::<Vec<i64>>();
+        let row = line.split(|c| c == ' ').filter_map(|s| s.parse().ok()).collect::<Vec<i64>>();
         rows.push(row);
     }
     for i in (0..rows.len() - 1).rev() {
