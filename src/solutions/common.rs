@@ -20,9 +20,9 @@ pub fn digits<T: Clone + Integer + FromPrimitive>(n: T) -> Vec<T> {
 /// Converts a slice of digits (in reverse order) to an integer
 pub fn undigits<T: Clone + Integer + FromPrimitive>(ds: &[T]) -> T {
     let base: T = FromPrimitive::from_i64(10).unwrap();
-    match ds {
-        [ref i] => i.clone() + num::zero(),
-        [ref i, ref j] => j.clone() * base + i.clone(),
+    match ds.len() {
+        1 => ds[0].clone() + num::zero(),
+        2 => ds[1].clone() * base + ds[0].clone(),
         _ => {
             let mut res: T = num::zero();
             for (a, b) in ds.iter().zip(0..) {
