@@ -1,5 +1,5 @@
 use super::{SolutionResult, SolutionError};
-use slow_primes::Primes;
+use primal::Primes;
 
 pub fn solution() -> SolutionResult {
     match Primes::sieve(10000).factor(600851475143).ok().unwrap().into_iter().last() {

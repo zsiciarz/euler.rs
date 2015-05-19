@@ -2,7 +2,7 @@
 
 extern crate num;
 extern crate getopts;
-extern crate slow_primes;
+extern crate primal;
 
 #[cfg(not(test))]
 use getopts::Options;

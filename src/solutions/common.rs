@@ -2,7 +2,7 @@ use std::mem;
 use num;
 use num::integer::Integer;
 use num::traits::FromPrimitive;
-use slow_primes::Primes;
+use primal::Primes;
 
 /// Converts an integer to a vector of digits (in reverse order).
 pub fn digits<T: Clone + Integer + FromPrimitive>(n: T) -> Vec<T> {

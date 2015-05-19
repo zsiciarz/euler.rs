@@ -1,5 +1,5 @@
 use super::{SolutionResult};
-use slow_primes::Primes;
+use primal::Primes;
 
 pub fn solution() -> SolutionResult {
     let primes = Primes::sieve(2000000);

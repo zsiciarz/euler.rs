@@ -1,4 +1,4 @@
-use slow_primes::Primes;
+use primal::Primes;
 
 use super::SolutionResult;
 use super::common::undigits;

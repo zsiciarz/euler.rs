@@ -1,6 +1,6 @@
 use super::SolutionResult;
 use super::common::num_divisors;
-use slow_primes::Primes;
+use primal::Primes;
 
 pub fn solution() -> SolutionResult {
     let mut n = 1i64;

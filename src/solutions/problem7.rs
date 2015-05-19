@@ -1,9 +1,9 @@
 use super::{SolutionResult, SolutionError};
-use slow_primes;
-use slow_primes::Primes;
+use primal;
+use primal::Primes;
 
 pub fn solution() -> SolutionResult {
-    let (_, upper_bound) = slow_primes::estimate_nth_prime(10001);
+    let (_, upper_bound) = primal::estimate_nth_prime(10001);
     let primes = Primes::sieve(upper_bound as usize);
     match primes.primes().nth(10001 - 1) {
         Some(p) => Ok(p as i64),
