@@ -1,8 +1,8 @@
 use super::{SolutionResult, SolutionError};
-use primal::Primes;
+use primal::Sieve;
 
 pub fn solution() -> SolutionResult {
-    match Primes::sieve(10000).factor(600851475143).ok().unwrap().into_iter().last() {
+    match Sieve::new(10000).factor(600851475143).ok().unwrap().into_iter().last() {
         None => Err(SolutionError::MatchFailed),
         Some((p, _)) => Ok(p as i64)
     }
