@@ -1,4 +1,4 @@
-#![feature(collections)]
+#![feature(permutations)]
 
 extern crate num;
 extern crate getopts;
