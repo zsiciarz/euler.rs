@@ -1,13 +1,15 @@
 use std::collections::HashSet;
 
+use permutohedron::Heap;
+
 use super::SolutionResult;
 use super::common::undigits;
 
 fn pandigital_products() -> HashSet<i64> {
-    let v = [1i64, 2, 3, 4, 5, 6, 7, 8, 9];
-    let perms = v.permutations();
+    let mut v = [1i64, 2, 3, 4, 5, 6, 7, 8, 9];
+    let mut heap = Heap::new(&mut v);
     let mut result = HashSet::new();
-    for p in perms {
+    while let Some(p) = heap.next_permutation() {
         for i in 1..6 {
             for j in i + 1..9 {
                 let x = undigits(&p[..i]);

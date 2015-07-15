@@ -1,7 +1,6 @@
-#![feature(permutations)]
-
 extern crate num;
 extern crate getopts;
+extern crate permutohedron;
 extern crate primal;
 
 #[cfg(not(test))]

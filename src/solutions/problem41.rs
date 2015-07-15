@@ -1,14 +1,14 @@
+use permutohedron::Heap;
 use primal::Sieve;
 
 use super::SolutionResult;
 use super::common::undigits;
 
 fn pandigitals(n: usize) -> Vec<usize> {
-    let v = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let v = &v[..n];
-    let perms = v.permutations();
+    let mut v = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let mut heap = Heap::new(&mut v[..n]);
     let mut result = Vec::new();
-    for p in perms {
+    while let Some(p) = heap.next_permutation() {
         result.push(undigits(&p[..]));
     }
     result
