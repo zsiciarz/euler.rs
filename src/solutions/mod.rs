@@ -12,6 +12,7 @@ mod problem10;
 mod problem12;
 mod problem13;
 mod problem14;
+mod problem15;
 mod problem16;
 mod problem17;
 mod problem18;
@@ -58,6 +59,7 @@ pub fn solution(problem: isize) -> SolutionResult {
         12 => problem12::solution(),
         13 => problem13::solution(),
         14 => problem14::solution(),
+        15 => problem15::solution(),
         16 => problem16::solution(),
         17 => problem17::solution(),
         18 => problem18::solution(),
