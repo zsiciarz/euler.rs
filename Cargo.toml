@@ -5,7 +5,7 @@ version = "0.0.1"
 authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [dependencies]
-getopts = "~0.2.13"
+getopts = "~0.2.14"
 num = "~0.1.27"
-permutohedron = "~0.1.6"
+permutohedron = "~0.1.7"
 primal = "~0.2.3"
