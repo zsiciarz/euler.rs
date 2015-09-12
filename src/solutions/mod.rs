@@ -30,6 +30,7 @@ mod problem34;
 mod problem40;
 mod problem41;
 mod problem42;
+mod problem45;
 mod problem67;
 
 #[derive(PartialEq, Debug)]
@@ -77,6 +78,7 @@ pub fn solution(problem: isize) -> SolutionResult {
         40 => problem40::solution(),
         41 => problem41::solution(),
         42 => problem42::solution(),
+        45 => problem45::solution(),
         67 => problem67::solution(),
         _  => Err(SolutionError::NotImplemented),
     }
