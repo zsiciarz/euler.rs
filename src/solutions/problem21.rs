@@ -13,7 +13,7 @@ pub fn solution() -> SolutionResult {
         divisors_map.insert(i, sum_divisors(i));
     }
     let mut sum = 0i64;
-    for (key, value) in divisors_map.iter() {
+    for (key, value) in &divisors_map {
         if *key != *value && divisors_map.get(value) == Some(key) {
             sum += *value;
         }
