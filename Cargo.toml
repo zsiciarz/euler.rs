@@ -9,3 +9,5 @@ getopts = "~0.2.14"
 num = "~0.1.31"
 permutohedron = "~0.2.1"
 primal = "~0.2.3"
+
+clippy = "*"

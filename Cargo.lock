@@ -2,10 +2,21 @@
 name = "euler"
 version = "0.0.1"
 dependencies = [
+ "clippy 0.0.48 (registry+https://github.com/rust-lang/crates.io-index)",
  "getopts 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "num 0.1.31 (registry+https://github.com/rust-lang/crates.io-index)",
  "permutohedron 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "primal 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "clippy"
+version = "0.0.48"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "regex-syntax 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "semver 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "unicode-normalization 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -21,6 +32,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "libc"
 version = "0.2.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "nom"
+version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -87,7 +103,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "regex-syntax"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "rustc-serialize"
 version = "0.3.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "semver"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "nom 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "unicode-normalization"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
