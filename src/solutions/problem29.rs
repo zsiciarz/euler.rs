@@ -3,7 +3,7 @@ use num;
 use num::BigUint;
 use num::traits::FromPrimitive;
 
-use super::{SolutionResult};
+use super::SolutionResult;
 
 pub fn solution() -> SolutionResult {
     let mut s = HashSet::new();

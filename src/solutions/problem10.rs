@@ -1,4 +1,4 @@
-use super::{SolutionResult};
+use super::SolutionResult;
 use primal::Sieve;
 
 pub fn solution() -> SolutionResult {

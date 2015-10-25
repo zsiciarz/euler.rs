@@ -1,4 +1,4 @@
-use super::{SolutionResult};
+use super::SolutionResult;
 
 fn sum_diagonals(level: i64) -> (i64, i64) {
     if level == 1 {

@@ -80,6 +80,6 @@ pub fn solution(problem: isize) -> SolutionResult {
         42 => problem42::solution(),
         45 => problem45::solution(),
         67 => problem67::solution(),
-        _  => Err(SolutionError::NotImplemented),
+        _ => Err(SolutionError::NotImplemented),
     }
 }

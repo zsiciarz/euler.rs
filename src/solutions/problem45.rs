@@ -25,4 +25,3 @@ mod test {
         assert_eq!(super::solution().map(|s| s % 100), Ok(5));
     }
 }
-

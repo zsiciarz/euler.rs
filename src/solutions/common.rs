@@ -29,7 +29,7 @@ pub fn undigits<T: Clone + Integer + FromPrimitive>(ds: &[T]) -> T {
                 res = res + a.clone() * num::pow(base.clone(), b);
             }
             res
-        },
+        }
     }
 }
 
@@ -63,7 +63,10 @@ pub struct Fib<T> {
 
 impl<T: Integer> Fib<T> {
     pub fn new() -> Fib<T> {
-        Fib {prev: num::one(), current: num::one()}
+        Fib {
+            prev: num::one(),
+            current: num::one(),
+        }
     }
 }
 

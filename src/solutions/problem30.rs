@@ -1,4 +1,4 @@
-use super::{SolutionResult};
+use super::SolutionResult;
 use super::common::digits;
 
 fn sum_powers(pow: u32, x: i64) -> i64 {

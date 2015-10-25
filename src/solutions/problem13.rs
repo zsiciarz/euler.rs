@@ -107,7 +107,10 @@ pub fn solution() -> SolutionResult {
         "72107838435069186155435662884062257473692284509516",
         "20849603980134001723930671666823555245252804609722",
         "53503534226472524250874054075591789781264330331690",
-    ).into_iter().map(|n| n.parse::<BigInt>().unwrap()).fold(zero.clone(), |acc, x| acc + x);
+    )
+        .into_iter()
+        .map(|n| n.parse::<BigInt>().unwrap())
+        .fold(zero.clone(), |acc, x| acc + x);
     let first_digits = digits(sum).into_iter().rev().take(10);
     let pairs = first_digits.zip((1..10).rev());
     let powers = pairs.map(|(a, b)| {

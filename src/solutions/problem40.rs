@@ -13,8 +13,8 @@ pub fn solution() -> SolutionResult {
             break;
         }
     }
-    Ok(all_digits[0] * all_digits[9] * all_digits[99] * all_digits[999] *
-       all_digits[9999] * all_digits[99999] * all_digits[999999])
+    Ok(all_digits[0] * all_digits[9] * all_digits[99] * all_digits[999] * all_digits[9999] *
+       all_digits[99999] * all_digits[999999])
 }
 
 #[cfg(test)]

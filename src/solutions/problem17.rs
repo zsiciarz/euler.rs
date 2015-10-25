@@ -1,14 +1,34 @@
 use super::SolutionResult;
 
 pub fn count_letters(n: usize) -> usize {
-    let low_digits: Vec<usize> = vec!(
-        "", "one", "two", "three", "four", "five", "six", "seven", "eight",
-        "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
-        "sixteen", "seventeen", "eighteen", "nineteen"
-    ).iter().map(|&s| s.len()).collect();
-    let tens: Vec<usize> = vec!(
-        "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
-    ).iter().map(|&s| s.len()).collect();
+    let low_digits: Vec<usize> = vec!["",
+                                      "one",
+                                      "two",
+                                      "three",
+                                      "four",
+                                      "five",
+                                      "six",
+                                      "seven",
+                                      "eight",
+                                      "nine",
+                                      "ten",
+                                      "eleven",
+                                      "twelve",
+                                      "thirteen",
+                                      "fourteen",
+                                      "fifteen",
+                                      "sixteen",
+                                      "seventeen",
+                                      "eighteen",
+                                      "nineteen"]
+                                     .iter()
+                                     .map(|&s| s.len())
+                                     .collect();
+    let tens: Vec<usize> = vec!["twenty", "thirty", "forty", "fifty", "sixty", "seventy",
+                                "eighty", "ninety"]
+                               .iter()
+                               .map(|&s| s.len())
+                               .collect();
     let (d10, m10) = (n / 10, n % 10);
     let (d100, m100) = (n / 100, n % 100);
     match n {
