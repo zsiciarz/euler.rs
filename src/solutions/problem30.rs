@@ -9,10 +9,4 @@ pub fn solution() -> SolutionResult {
     Ok((2i64..1234567).filter(|&x| x == sum_powers(5, x)).fold(0, |acc, x| acc + x))
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100), Ok(39));
-    }
-}
+test_solution!(39);

@@ -1,4 +1,8 @@
 mod common;
+
+#[macro_use]
+mod macros;
+
 mod problem1;
 mod problem2;
 mod problem3;

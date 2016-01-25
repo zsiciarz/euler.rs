@@ -28,10 +28,4 @@ pub fn solution() -> SolutionResult {
     Ok(num_sundays as i64)
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100), Ok(71));
-    }
-}
+test_solution!(71);

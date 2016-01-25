@@ -21,10 +21,4 @@ pub fn solution() -> SolutionResult {
     Ok(products.max().unwrap() as i64)
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100), Ok(0));
-    }
-}
+test_solution!(0);

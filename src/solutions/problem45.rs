@@ -18,10 +18,4 @@ pub fn solution() -> SolutionResult {
     Ok(x.unwrap())
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100), Ok(5));
-    }
-}
+test_solution!(5);

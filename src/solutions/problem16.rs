@@ -13,10 +13,4 @@ pub fn solution() -> SolutionResult {
     }
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 100), Ok(66));
-    }
-}
+test_solution!(66);

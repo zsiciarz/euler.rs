@@ -16,10 +16,4 @@ pub fn solution() -> SolutionResult {
     Ok(*r.denom())
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_solution() {
-        assert_eq!(super::solution().map(|s| s % 10), Ok(0));
-    }
-}
+test_solution!(0);
