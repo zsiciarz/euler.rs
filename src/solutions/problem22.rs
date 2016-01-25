@@ -18,7 +18,7 @@ fn name_value(name: &str) -> u32 {
 pub fn solution() -> SolutionResult {
     let path = "data/p022_names.txt";
     let mut contents = String::new();
-    File::open(path).unwrap().read_to_string(&mut contents).ok().expect("Cannot read file");
+    File::open(path).unwrap().read_to_string(&mut contents).expect("Cannot read file");
     let mut names: Vec<&str> = contents[..].split(',').collect();
     names.sort();
     Ok(names.into_iter()

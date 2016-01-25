@@ -23,7 +23,7 @@ fn word_value(name: &str) -> u32 {
 pub fn solution() -> SolutionResult {
     let path = "data/p042_words.txt";
     let mut contents = String::new();
-    File::open(path).unwrap().read_to_string(&mut contents).ok().expect("Cannot read file");
+    File::open(path).unwrap().read_to_string(&mut contents).expect("Cannot read file");
     let names = contents[..].split(',');
     Ok(names.filter(|&x| is_triangular(word_value(x))).count() as i64)
 }
