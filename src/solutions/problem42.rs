@@ -11,10 +11,10 @@ fn is_triangular(n: u32) -> bool {
 fn word_value(name: &str) -> u32 {
     name.chars()
         .filter_map(|c| {
-            if c != '\"' {
-                Some((c as u8 - 64u8) as u32)
-            } else {
+            if c == '\"' {
                 None
+            } else {
+                Some((c as u8 - 64u8) as u32)
             }
         })
         .fold(0, |acc, x| acc + x)
