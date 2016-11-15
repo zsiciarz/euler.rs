@@ -6,6 +6,6 @@ authors = ["Zbigniew Siciarz <zbigniew@siciarz.net>"]
 
 [dependencies]
 getopts = "~0.2.14"
-num = "~0.1.35"
-permutohedron = "~0.2.1"
+num = "~0.1.36"
+permutohedron = "~0.2.2"
 primal = "~0.2.3"
